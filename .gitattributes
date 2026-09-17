@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.DDS binary
+*.dds binary
+*.png binary
+*.jpg binary
+*.gltf binary
+*.glb binary
+*.bin binary

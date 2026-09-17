@@ -1,0 +1,11 @@
+// Obito Uchiha Robe -- based on Gale's starting robe (UNI_GaleRobe).
+// "using" inherits ArmorClass / Weight / slot / proficiency from the vanilla entry,
+// so only the differences need to be stated here.
+
+new entry "UNI_ObitoUchihaRobe"
+type "Armor"
+using "UNI_GaleRobe"
+data "RootTemplate" "db53c125-9430-415a-aa2e-4899db9d4c24"
+data "Rarity" "Rare"
+data "ValueLevel" "5"
+data "Unique" "1"

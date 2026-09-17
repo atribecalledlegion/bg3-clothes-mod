@@ -1,0 +1,27 @@
+# Obito Uchiha Robe palette.
+# MEASURED from the supplied references, not eyeballed:
+#   robe/obi/lining/dark  -> quantised histogram of obito_uchiha_robe_front_profile.jpg
+#                            and obito_uchiha_robe_side_angle_profile.jpg (both agree exactly)
+#   crest colours         -> obito_uchiha_robe_back_profile.jpg
+#
+# Note the back reference is a flatter, lighter illustration and renders the robe as
+# #7C618E. The front and side views agree with each other on #463E65, so that is taken
+# as canonical and the back view is used only for the crest.
+
+crest_red    = #E70102
+crest_white  = #F6F6F6
+outline      = #251B23
+
+robe_purple  = #463E65
+robe_shadow  = #323646
+lining_cream = #B3ACA0
+obi_white    = #E5E5E5
+obi_stripe   = #8B7E95
+undergarment = #212229
+
+# Neutral stand-ins for the maps still locked inside the virtual texture.
+# neutral_nm is a flat tangent-space normal (no surface detail).
+# neutral_pm is measured from HUM_M_ARM_Padded_Body_A_PM -- the padded garment worn under
+# this very robe -- averaged to a single colour: metallic ~0, roughness high, AO high.
+neutral_nm   = #8080FF
+neutral_pm   = #06D4E6
