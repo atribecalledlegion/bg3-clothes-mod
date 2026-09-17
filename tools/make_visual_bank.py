@@ -1,38 +1,25 @@
-"""Generate VisualBank entries: clones of the vanilla robe visuals, with the body
-submesh's material swapped for ours.
+"""Generate VisualBank entries: clones of the vanilla garment visuals, with the body
+submesh's material swapped for the item's.
 
 Why cloning rather than an override: BG3 root templates expose MaterialOverrides and
 RealMaterialOverrides, but a scan of every shipped root template (Shared, Gustav,
 GustavDev) found ZERO items using either. Larian's pattern is that an item carries its
 own visual resources referencing its own materials, so that is what this reproduces.
 
-Only the robe Body visual is cloned per body type. Each visual also has Bracers and
-Cloth submeshes that keep their vanilla materials -- they use separate textures, so
-swapping them would break them.
+Only the Body submesh's material is swapped. The Bracers submesh keeps its vanilla
+material, and Body_Cloth is the invisible cloth-simulation proxy.
+
+New visual IDs are uuid5(mod uuid, vanilla id): stable across regenerations, and unique
+per item, so two items built on the same garment never collide.
+
+Usage:  python tools/make_visual_bank.py <item>
+Writes  <content>/_visuals.lsx (merged by merge_banks.py) and build/work/<item>/visual_map.json
 """
 import sys, os, base64, uuid, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lspk import Pak
 from lsf import LSF
-
-DATA = r"C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\Data"
-OUT  = 'src/Public/ObitoUchihaRobe/Content/Assets/Characters/[PAK]_ObitoUchihaRobe/_visuals.lsx'
-MAP  = 'art/source/visual_map.json'
-
-MAT_M_VANILLA = '92cca1dc-071f-1a40-6eb3-de8e16a38c25'
-MAT_F_VANILLA = '4bf29629-687c-5330-bce8-8d22432941c8'
-MAT_M_NEW     = '8b0f3491-d048-4989-82ef-afde63bdac5e'
-MAT_F_NEW     = '5d271dbf-18a4-430d-b896-2a33532e9148'
-
-BANKS = [
-    'Humans/[PAK]_Male_Armor', 'Humans/[PAK]_Female_Armor',
-    'Humans/[PAK]_MaleStrong_Armor', 'Humans/[PAK]_FemaleStrong_Armor',
-    'Githyanki/[PAK]_Male_Armor', 'Githyanki/[PAK]_Female_Armor',
-    'Dwarves/[PAK]_Male_Armor', 'Dwarves/[PAK]_Female_Armor',
-    'Halflings/[PAK]_Male_Armor', 'Halflings/[PAK]_Female_Armor',
-    'Gnomes/[PAK]_Male_Armor', 'Gnomes/[PAK]_Female_Armor',
-    'Dragonborn/[PAK]_Male_Armor', 'Dragonborn/[PAK]_Female_Armor',
-]
+import item as itemlib
 
 XT = {'FixedString':'FixedString','LSString':'LSString','Bool':'bool','Byte':'uint8',
       'Int':'int32','Int64':'int64','Float':'float','Vec3':'fvec3','UInt':'uint32',
@@ -71,9 +58,15 @@ def emit(lsf, kids, i, depth, rewrite):
     return rows
 
 def main():
-    pak = Pak(os.path.join(DATA, 'Shared.pak'))
+    it = itemlib.load()
+    g = it.garment
+    sets = {s['code']: (s['vanilla_material_id'], ids['material']) for _, s, ids in it.sets()}
+    namespace = uuid.UUID(it.ids['mod'])
+    prefix = it['visual_prefix']
+
+    pak = Pak(os.path.join(itemlib.DATA, 'Shared.pak'))
     body, mapping = [], {}
-    for bank in BANKS:
+    for bank in g['visual_banks']:
         path = 'Public/Shared/Content/Assets/Characters/%s/_merged.lsf' % bank
         if path not in pak.entries:
             print('  !! missing bank', bank); continue
@@ -85,19 +78,19 @@ def main():
             a = lsf.node_attrs(i)
             nm = str(a.get('Name',('',''))[1])
             sf = str(a.get('SourceFile',('',''))[1])
-            if nm.endswith('_ARM_Robe_A_Body') and sf.upper().endswith('.GR2'):
+            if nm.endswith(g['visual_suffix']) and sf.upper().endswith('.GR2'):
                 hit = (i, a, nm); break
         if hit is None:
-            print('  !! no robe visual in', bank); continue
+            print('  !! no garment visual in', bank); continue
         i, a, nm = hit
         old_id = str(a['ID'][1])
-        new_id = str(uuid.uuid5(uuid.UUID('d2f4984b-c5c7-4cd3-97a0-63bff6b561b7'), old_id))
+        new_id = str(uuid.uuid5(namespace, old_id))
         fem = '_F_' in nm or 'Female' in bank
-        old_mat, new_mat = (MAT_F_VANILLA, MAT_F_NEW) if fem else (MAT_M_VANILLA, MAT_M_NEW)
+        old_mat, new_mat = sets['F'] if fem else sets['M']
         swapped = [0]
         def rewrite(node, key, val, _o=old_id, _n=new_id, _om=old_mat, _nm=new_mat, _s=swapped):
             if node == 'Resource' and key == 'ID' and val == _o: return _n
-            if node == 'Resource' and key == 'Name': return 'Obito_' + val
+            if node == 'Resource' and key == 'Name': return prefix + val
             if node == 'Objects' and key == 'MaterialID' and val == _om:
                 _s[0] += 1; return _nm
             return val
@@ -110,11 +103,12 @@ def main():
            '\t<region id="VisualBank">', '\t\t<node id="VisualBank">', '\t\t\t<children>']
     doc += body
     doc += ['\t\t\t</children>', '\t\t</node>', '\t</region>', '</save>']
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    open(OUT,'w',encoding='utf-8',newline='\n').write('\n'.join(doc)+'\n')
-    json.dump(mapping, open(MAP,'w'), indent=2)
-    print('\nwrote %s  (%d visuals)' % (OUT, len(mapping)))
-    print('wrote %s' % MAP)
+    out = it.content + '/_visuals.lsx'
+    itemlib.write(out, '\n'.join(doc)+'\n')
+    vmap = os.path.join(it.work, 'visual_map.json')
+    json.dump(mapping, open(vmap,'w'), indent=2)
+    print('\nwrote %s  (%d visuals)' % (out, len(mapping)))
+    print('wrote %s' % vmap)
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,152 @@
+{
+  "name": "Akatsuki Cloak",
+  "folder": "AkatsukiCloak",
+  "author": "dawil",
+  "mod_description": "A black cloak patterned with red clouds, built on Gale's starting robe.",
+  "garment": "gale_robe",
+  "stat": "UNI_AkatsukiCloak",
+  "display_name": "Akatsuki Cloak",
+  "description": "Black cloth, red clouds. Those who recognise the pattern tend to find somewhere else to be.",
+  "rarity": "Rare",
+  "value_level": 5,
+  "treasure_tables": [
+    "TUT_Chest_Potions"
+  ],
+  "visual_prefix": "AkatsukiCloak_",
+  "neutral_maps": {
+    "nm": "#8080FF",
+    "pm": "#06D4E6"
+  },
+  "icon_view": "back",
+  "bake": {
+    "ground": "#141416",
+    "mask": "#0000FF",
+    "supersample": 2,
+    "images": {
+      "cloud": "items/akatsuki_cloak/art/source/akatsuki_cloud.png"
+    },
+    "decals": [
+      {
+        "image": "cloud",
+        "face": "back",
+        "x": 0.0,
+        "y": 0.77,
+        "size": 0.19,
+        "rot": -6
+      },
+      {
+        "image": "cloud",
+        "face": "back",
+        "x": -0.74,
+        "y": 0.77,
+        "size": 0.12,
+        "rot": 18
+      },
+      {
+        "image": "cloud",
+        "face": "back",
+        "x": 0.74,
+        "y": 0.77,
+        "size": 0.12,
+        "rot": -18,
+        "mirror": true
+      },
+      {
+        "image": "cloud",
+        "face": "back",
+        "x": 0.22,
+        "y": 0.46,
+        "size": 0.19,
+        "rot": 5,
+        "mirror": true
+      },
+      {
+        "image": "cloud",
+        "face": "back",
+        "x": -0.28,
+        "y": 0.17,
+        "size": 0.2,
+        "rot": -4
+      },
+      {
+        "image": "cloud",
+        "face": "front",
+        "x": 0.08,
+        "y": 0.76,
+        "size": 0.11,
+        "rot": 4
+      },
+      {
+        "image": "cloud",
+        "face": "front",
+        "x": -0.74,
+        "y": 0.77,
+        "size": 0.12,
+        "rot": 18
+      },
+      {
+        "image": "cloud",
+        "face": "front",
+        "x": 0.74,
+        "y": 0.77,
+        "size": 0.12,
+        "rot": -18,
+        "mirror": true
+      },
+      {
+        "image": "cloud",
+        "face": "front",
+        "x": -0.26,
+        "y": 0.47,
+        "size": 0.18,
+        "rot": -5,
+        "mirror": true,
+        "only": "masculine"
+      },
+      {
+        "image": "cloud",
+        "face": "front",
+        "x": -0.16,
+        "y": 0.17,
+        "size": 0.18,
+        "rot": 4,
+        "only": "masculine"
+      },
+      {
+        "image": "cloud",
+        "face": "front",
+        "x": 0.3,
+        "y": 0.5,
+        "size": 0.16,
+        "rot": -5,
+        "mirror": true,
+        "only": "feminine"
+      },
+      {
+        "image": "cloud",
+        "face": "front",
+        "x": 0.24,
+        "y": 0.16,
+        "size": 0.19,
+        "rot": 4,
+        "only": "feminine"
+      }
+    ]
+  },
+  "ids": {
+    "mod": "afb7f3a1-b8fe-40a9-85f7-d714375e0e3a",
+    "item": "d476d452-ca59-42cd-b11c-70dda4ffd1e0",
+    "name_handle": "h3b819b31g4676g41abga824ge4134469d267",
+    "desc_handle": "hef1f0f9ag9820g4447g8f8cgdc4efb546678",
+    "preset": "c565dfa5-0ba4-4c36-8a02-944632469837",
+    "nm": "c824323c-ab12-47a1-b859-88335e72b1ef",
+    "pm": "ed9e15e1-a9c8-48c7-add4-5d55c2476d44",
+    "material_M": "0d9fd987-d641-45e3-9b22-4c5e436cf33f",
+    "bm_M": "f94daa7e-ef46-493f-92db-57ed75c5fe5b",
+    "msk_M": "0c84b05a-9f2f-4b98-9c75-63b04cd98c02",
+    "material_F": "a818a084-e1b1-48c4-a24b-e9b402b995d2",
+    "bm_F": "ddc10fe3-87b0-44dd-bd8e-84bc268a0878",
+    "msk_F": "8a36457e-4f80-4e87-a3d9-1da2d593ab83"
+  },
+  "icon_lift": 0.12
+}

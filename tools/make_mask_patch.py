@@ -64,19 +64,22 @@ def raster(tris):
 
 def main():
     dae, geom, vmask, out = sys.argv[1:5]
+    work = sys.argv[5] if len(sys.argv) > 5 else 'build/work'
+    os.makedirs(work, exist_ok=True)
+    gray, png = os.path.join(work, '_panel.gray'), os.path.join(work, '_panel.png')
     tris = panel_tris(dae, geom)
-    open('art/source/_panel.gray','wb').write(bytes(raster(tris)))
+    open(gray, 'wb').write(bytes(raster(tris)))
     # dilate so UV seams at the panel edge are covered too
-    subprocess.run([M, '-size', '%dx%d' % (S,S), '-depth', '8', 'GRAY:art/source/_panel.gray',
+    subprocess.run([M, '-size', '%dx%d' % (S,S), '-depth', '8', 'GRAY:' + gray,
                     '-morphology', 'Dilate', 'Disk:3', '-threshold', '50%',
-                    'PNG24:art/source/_panel.png'], check=True)
+                    'PNG24:' + png], check=True)
     subprocess.run([M, vmask,
                     '(', '-size', '%dx%d' % (S,S), 'xc:'+FILL, ')',
-                    'art/source/_panel.png',
+                    png,
                     '-compose', 'Over', '-composite',
                     '-alpha', 'off',
                     '-define', 'dds:compression=dxt1', '-define', 'dds:mipmaps=12', out], check=True)
-    os.remove('art/source/_panel.gray'); os.remove('art/source/_panel.png')
+    os.remove(gray); os.remove(png)
     print('patched %s  (%d back-panel triangles flattened to %s)' % (out, len(tris), FILL))
 
 if __name__ == '__main__':

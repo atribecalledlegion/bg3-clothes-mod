@@ -1,24 +1,29 @@
-"""Emit the root template's <Visuals> node: Gale's race->visual map, with the robe body
-visual swapped for our clone. Body types we did not clone (Dragonborn, which uses its own
-materials and textures) keep the vanilla visual and simply show the vanilla robe."""
+"""Emit the root template's <Visuals> node: the parent template's race->visual map, with
+the garment visual swapped for our clone. Body types we did not clone (Dragonborn, which
+uses its own materials and textures) keep the vanilla visual and show the vanilla garment.
+
+Usage:  python tools/make_visuals_node.py <item>     (after make_visual_bank.py)
+Writes  build/work/<item>/visuals_node.xml
+"""
 import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lspk import Pak
 from lsf import LSF
-
-DATA = r"C:\Program Files (x86)\Steam\steamapps\common\Baldurs Gate 3\Data"
-GALE = '9410a467-3e49-4b14-b067-ea8ad6a0d431'
+import item as itemlib
 
 def main():
-    swap = {v['old']: v['new'] for v in json.load(open('art/source/visual_map.json')).values()}
-    pak = Pak(os.path.join(DATA, 'Shared.pak'))
+    it = itemlib.load()
+    parent = it.garment['parent_template']
+    swap = {v['old']: v['new'] for v in
+            json.load(open(os.path.join(it.work, 'visual_map.json'))).values()}
+    pak = Pak(os.path.join(itemlib.DATA, 'Shared.pak'))
     f = LSF(pak.read('Public/Shared/RootTemplates/_merged.lsf'))
     kids = {}
     for i, (ni, fa, par) in enumerate(f.nodes): kids.setdefault(par, []).append(i)
     go = None
     for i in range(len(f.nodes)):
         a = f.node_attrs(i)
-        if f.node_name(i) == 'GameObjects' and str(a.get('MapKey', ('', ''))[1]) == GALE:
+        if f.node_name(i) == 'GameObjects' and str(a.get('MapKey', ('', ''))[1]) == parent:
             go = i; break
     vis = None
     for c in kids.get(go, []):
@@ -42,8 +47,9 @@ def main():
         rows += ['\t\t\t\t\t\t\t\t\t</children>', '\t\t\t\t\t\t\t\t</node>']
     rows += ['\t\t\t\t\t\t\t</children>', '\t\t\t\t\t\t</node>']
     print('body types: %d   visuals swapped to ours: %d' % (len(kids.get(vis, [])), n_swap))
-    open('art/source/visuals_node.xml', 'w', encoding='utf-8', newline='\n').write('\n'.join(rows) + '\n')
-    print('wrote art/source/visuals_node.xml')
+    out = os.path.join(it.work, 'visuals_node.xml')
+    itemlib.write(out, '\n'.join(rows) + '\n')
+    print('wrote', out)
 
 if __name__ == '__main__':
     main()

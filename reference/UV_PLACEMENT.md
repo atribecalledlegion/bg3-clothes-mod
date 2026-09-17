@@ -95,6 +95,6 @@ body. Dwarves get the crest a few percent low — not visible in the render.
 
 ## Verified
 
-`art/make_textures.sh` builds both sets; the crest was then texture-mapped back onto
+`items/obito_uchiha_robe/art/make_textures.sh` builds both sets; the crest was then texture-mapped back onto
 HUM_M, DWR_M, HUM_F and HFL_F and renders upright, centred and correctly sized on all
-four. See `reference/crest_on_bodies.png`.
+four. See `items/obito_uchiha_robe/reference/crest_on_bodies.png`.

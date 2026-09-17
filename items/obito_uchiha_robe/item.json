@@ -1,0 +1,35 @@
+{
+  "name": "Obito Uchiha Robe",
+  "folder": "ObitoUchihaRobe",
+  "author": "dawil",
+  "mod_description": "A purple robe with the Uchiha crest on its back, built on Gale's starting robe.",
+  "garment": "gale_robe",
+
+  "stat": "UNI_ObitoUchihaRobe",
+  "display_name": "Obito Uchiha Robe",
+  "description": "The crest stitched at its back has taken no dye and lost no colour, however many hands have tried to change it.",
+  "rarity": "Rare",
+  "value_level": 5,
+  "treasure_tables": ["TUT_Chest_Potions"],
+  "visual_prefix": "Obito_",
+
+  "art": ["sh", "items/obito_uchiha_robe/art/make_textures.sh"],
+  "neutral_maps": { "nm": "#8080FF", "pm": "#06D4E6" },
+  "icon_view": "back",
+
+  "ids": {
+    "mod":         "d2f4984b-c5c7-4cd3-97a0-63bff6b561b7",
+    "item":        "db53c125-9430-415a-aa2e-4899db9d4c24",
+    "name_handle": "h9a7fd611g3175g4107gbfcbgf05c931ea2b3",
+    "desc_handle": "h964ecfbeg7de6g48d3ga62fg4b71f54728a7",
+    "preset":      "cd56b336-e7de-4c94-afba-40776b39e153",
+    "nm":          "005657b1-e9ae-40ce-ae86-afcc8b972030",
+    "pm":          "9effe3e4-73cd-49c4-8ec0-a9fff850077a",
+    "material_M":  "8b0f3491-d048-4989-82ef-afde63bdac5e",
+    "bm_M":        "cf9179e0-a4e7-42ea-9c17-aa494d87bb5d",
+    "msk_M":       "546f4b98-8505-4881-b7ce-dd66e32230c2",
+    "material_F":  "5d271dbf-18a4-430d-b896-2a33532e9148",
+    "bm_F":        "ebe9b789-816e-492b-bbdc-d5b1fbb3b080",
+    "msk_F":       "4fbfa1c0-c50f-42dc-a89a-4d55add8ca3c"
+  }
+}

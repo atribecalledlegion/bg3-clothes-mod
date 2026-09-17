@@ -1,6 +1,6 @@
-"""Generate the mod's Content bank (_merged.lsx): texture + material resources.
+"""Generate the item's Content bank (_merged.lsx): texture + material resources.
 
-Rather than hand-writing the XML, this clones the vanilla robe body material out of the
+Rather than hand-writing the XML, this clones the vanilla body material out of the
 shipped banks -- keeping every ScalarParameter and the whole "02 Colour" slot set exactly
 as Larian tuned them -- and rewires it:
 
@@ -12,48 +12,18 @@ as Larian tuned them -- and rewires it:
     off a vanilla material that uses it (HUM_M_ARM_ChainShirt_A_0_Pants):
         basecolor / normalmap / physicalmap / MSKColor,  MaterialType 48.
 
-All four texture inputs are wired. The robe's vanilla NM/PM are still inside the virtual
-texture, so neutral stand-ins are used (art/make_neutral_maps.sh) -- flat normal, and a
-physical map averaged from the padded garment worn under this robe. Leaving a shader input
-off is a plausible cause of a material failing to render at all, so flat-but-present beats
-absent. Swap in the extracted originals when the VT is unpacked.
+All four texture inputs are wired. The garment's vanilla NM/PM are still inside the
+virtual texture, so neutral stand-ins are used (tools/make_neutral_maps.py). An unbound
+normalmap renders the whole garment black, so flat-but-present beats absent.
 
-Usage:  python tools/make_content_bank.py
+Usage:  python tools/make_content_bank.py <item>
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lsf import LSF
+import item as itemlib
 
-OUT = 'src/Public/ObitoUchihaRobe/Content/Assets/Characters/[PAK]_ObitoUchihaRobe/_merged.lsx'
-ASSET = 'Public/ObitoUchihaRobe/Assets/Textures/Armor'
 SHADER = 'Public/Shared/Assets/Materials/Characters/CHAR_BASE_VertCut.lsf'
-
-# Shared by both materials: neutral stand-ins, so one copy of each is enough.
-NEUTRAL = [
-    ('005657b1-e9ae-40ce-ae86-afcc8b972030', 'ObitoUchihaRobe_NM', 'ObitoUchihaRobe_NM.DDS', 'normalmap'),
-    ('9effe3e4-73cd-49c4-8ec0-a9fff850077a', 'ObitoUchihaRobe_PM', 'ObitoUchihaRobe_PM.DDS', 'physicalmap'),
-]
-
-SETS = [
-    dict(tag='masculine',
-         bank='art/source/mesh/HUM_M_Armor.lsf',
-         vanilla_material='HUM_M_ARM_Robe_A_Body',
-         material_id='8b0f3491-d048-4989-82ef-afde63bdac5e',
-         material_name='ObitoUchihaRobe_M_Body',
-         bm=('cf9179e0-a4e7-42ea-9c17-aa494d87bb5d', 'ObitoUchihaRobe_M_BM',
-             'HUM_M_ARM_Robe_A_BM.DDS'),
-         msk=('546f4b98-8505-4881-b7ce-dd66e32230c2', 'ObitoUchihaRobe_M_MSKcloth',
-              'HUM_M_ARM_Robe_A_MSKcloth.DDS')),
-    dict(tag='feminine',
-         bank='art/source/mesh/HUM_F_Armor.lsf',
-         vanilla_material='HUM_F_ARM_Robe_A_Body',
-         material_id='5d271dbf-18a4-430d-b896-2a33532e9148',
-         material_name='ObitoUchihaRobe_F_Body',
-         bm=('ebe9b789-816e-492b-bbdc-d5b1fbb3b080', 'ObitoUchihaRobe_F_BM',
-             'HUM_F_ARM_Robe_A_Body_BM.DDS'),
-         msk=('4fbfa1c0-c50f-42dc-a89a-4d55add8ca3c', 'ObitoUchihaRobe_F_MSKcloth',
-              'HUM_F_ARM_Robe_A_Body_MSKcloth.DDS')),
-]
 
 def esc(s):
     return (str(s).replace('&', '&amp;').replace('<', '&lt;')
@@ -77,15 +47,13 @@ TYPE_XML = {'Float': 'float', 'Bool': 'bool', 'FixedString': 'FixedString',
             'LSString': 'LSString', 'Int': 'int32', 'Byte': 'uint8',
             'Int64': 'int64', 'Vec3': 'fvec3'}
 
-NEUTRAL_SLOTS = os.environ.get('NEUTRAL_SLOTS', '0') == '1'
-
-def emit_param(lsf, idx, depth):
+def emit_param(lsf, idx, depth, neutral_slots):
     """Copy a ScalarParameters / Vector3Parameters node through.
 
-    With NEUTRAL_SLOTS=1 every "02 Colour" slot is forced to white (1,1,1). The shader
-    multiplies the base colour by the slot colour selected through MSKColor, so white
+    With neutral_slots ("neutral_slots": true in item.json) every "02 Colour" slot is
+    forced to white (1,1,1). The shader multiplies the base colour by the slot colour selected through MSKColor, so white
     slots make the rendered surface equal the base texture exactly -- what you paint is
-    what you get, with no tint shifting the crest's red and white.
+    what you get, with no tint shifting the artwork's colours.
 
     This gives up dye response: a dye works by overwriting these slots, and with the
     artwork carrying all the colour there is nothing meaningful left for it to change.
@@ -103,7 +71,7 @@ def emit_param(lsf, idx, depth):
         if xt is None:
             continue
         if t == 'Vec3':
-            if NEUTRAL_SLOTS and nm == 'Vector3Parameters' and k in ('Value', 'BaseValue'):
+            if neutral_slots and nm == 'Vector3Parameters' and k in ('Value', 'BaseValue'):
                 v = (1.0, 1.0, 1.0)
             v = '%s %s %s' % tuple('%.9g' % c for c in v)
         elif t == 'Bool':
@@ -115,20 +83,30 @@ def emit_param(lsf, idx, depth):
     return out
 
 def main():
+    it = itemlib.load()
+    # Off by default: the in-game-verified build keeps Larian's slot colours in the
+    # material and neutralises them with the item's white preset (make_preset.py).
+    neutral_slots = it.get('neutral_slots', False)
+    f = it.folder
+    # Shared by both materials: neutral stand-ins, so one copy of each is enough.
+    neutral = [(it.ids['nm'], f + '_NM', f + '_NM.DDS', 'normalmap'),
+               (it.ids['pm'], f + '_PM', f + '_PM.DDS', 'physicalmap')]
     textures, materials = [], []
-    for s in SETS:
+    for n, (tag, s, ids) in enumerate(it.sets()):
         lsf = LSF(open(s['bank'], 'rb').read())
         midx, mattr, mkids = find_material(lsf, s['vanilla_material'])
+        bm = (ids['bm'], '%s_%s_BM' % (f, s['code']), s['bm'])
+        msk = (ids['msk'], '%s_%s_MSKcloth' % (f, s['code']), s['msk'])
 
-        entries = [s['bm'], s['msk']]
-        if s is SETS[0]:                       # emit the shared neutrals once
-            entries += [(u, n, f) for u, n, f, _ in NEUTRAL]
+        entries = [bm, msk]
+        if n == 0:                             # emit the shared neutrals once
+            entries += [(u, nm, fn) for u, nm, fn, _ in neutral]
         for uid, name, fn in entries:
             srgb = 'True' if fn.endswith('_BM.DDS') else 'False'
             textures += ['\t\t\t\t<node id="Resource">',
                          attr('ID', 'FixedString', uid),
                          attr('Name', 'LSString', name),
-                         attr('SourceFile', 'LSString', '%s/%s' % (ASSET, fn)),
+                         attr('SourceFile', 'LSString', '%s/%s' % (it.texture_asset, fn)),
                          attr('Template', 'FixedString', name),
                          attr('Width', 'int32', 2048),
                          attr('Height', 'int32', 2048),
@@ -140,8 +118,8 @@ def main():
                          '\t\t\t\t</node>']
 
         body = ['\t\t\t\t<node id="Resource">',
-                attr('ID', 'FixedString', s['material_id']),
-                attr('Name', 'LSString', s['material_name']),
+                attr('ID', 'FixedString', ids['material']),
+                attr('Name', 'LSString', '%s_%s_Body' % (f, s['code'])),
                 attr('SourceFile', 'LSString', SHADER),
                 attr('MaterialType', 'uint8', 48),
                 attr('DiffusionProfileUUID', 'FixedString', ''),
@@ -149,10 +127,10 @@ def main():
         kept = 0
         for c in mkids:
             if lsf.node_name(c) in ('ScalarParameters', 'Vector3Parameters'):
-                body += emit_param(lsf, c, 6)
+                body += emit_param(lsf, c, 6, neutral_slots)
                 kept += 1
-        params = [('basecolor', s['bm'][0]), ('MSKColor', s['msk'][0])]
-        params += [(pn, u) for u, _, _, pn in NEUTRAL]
+        params = [('basecolor', bm[0]), ('MSKColor', msk[0])]
+        params += [(pn, u) for u, _, _, pn in neutral]
         for pname, uid in params:
             body += ['\t\t\t\t\t\t<node id="Texture2DParameters">',
                      attr('ParameterName', 'FixedString', pname, 7),
@@ -163,7 +141,7 @@ def main():
                      '\t\t\t\t\t\t</node>']
         body += ['\t\t\t\t\t</children>', '\t\t\t\t</node>']
         materials += body
-        print('%-10s cloned %d scalar/colour params from %s' % (s['tag'], kept, s['vanilla_material']))
+        print('%-10s cloned %d scalar/colour params from %s' % (tag, kept, s['vanilla_material']))
 
     doc = ['<?xml version="1.0" encoding="utf-8"?>', '<save>',
            '\t<version major="4" minor="0" revision="9" build="0" />']
@@ -172,9 +150,9 @@ def main():
         doc += rows
         doc += ['\t\t\t</children>', '\t\t</node>', '\t</region>']
     doc.append('</save>')
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    open(OUT, 'w', encoding='utf-8', newline='\n').write('\n'.join(doc) + '\n')
-    print('wrote', OUT)
+    out = it.content + '/_merged.lsx'
+    itemlib.write(out, '\n'.join(doc) + '\n')
+    print('wrote', out)
 
 if __name__ == '__main__':
     main()

@@ -13,32 +13,35 @@ Vanilla ships every bank -- TextureBank, MaterialBank, VisualBank, and the rest 
 regions inside ONE _merged.lsf per content folder. Splitting the VisualBank into its own
 _visuals.lsf risks the engine never loading it, which leaves the root template pointing at
 visual UUIDs that do not exist: the item equips, and the character renders with no robe.
+
+Usage:  python tools/merge_banks.py <item>
 """
 import os, re, sys
-
-D = 'src/Public/ObitoUchihaRobe/Content/Assets/Characters/[PAK]_ObitoUchihaRobe'
-MAIN = os.path.join(D, '_merged.lsx')
-EXTRAS = [os.path.join(D, f) for f in ('_visuals.lsx', '_preset.lsx')]
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import item as itemlib
 
 def regions(path):
     s = open(path, encoding='utf-8').read()
     return re.findall(r'\t<region id=".*?</region>\n', s, re.S)
 
 def main():
-    extras = [e for e in EXTRAS if os.path.exists(e)]
+    it = itemlib.load()
+    main_bank = os.path.join(it.content, '_merged.lsx')
+    extras = [os.path.join(it.content, f) for f in ('_visuals.lsx', '_preset.lsx')]
+    extras = [e for e in extras if os.path.exists(e)]
     if not extras:
         print('nothing to merge'); return
-    regs = regions(MAIN)
+    regs = regions(main_bank)
     for e in extras:
         regs += regions(e)
     doc = ['<?xml version="1.0" encoding="utf-8"?>', '<save>',
            '\t<version major="4" minor="0" revision="9" build="0" lslib_meta="v1,bswap_guids,lsf_adjacency" />']
     out = '\n'.join(doc) + '\n' + ''.join(regs) + '</save>\n'
-    open(MAIN, 'w', encoding='utf-8', newline='\n').write(out)
+    itemlib.write(main_bank, out)
     for e in extras:
         os.remove(e)
     names = re.findall(r'<region id="([^"]+)"', out)
-    print('merged into %s' % MAIN)
+    print('merged into %s' % main_bank)
     print('  regions: %s' % ', '.join(names))
     print('  removed %s' % ', '.join(os.path.basename(e) for e in extras))
 

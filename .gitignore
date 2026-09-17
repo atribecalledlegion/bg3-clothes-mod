@@ -1,22 +1,8 @@
-# Python
 __pycache__/
 *.pyc
-
-# Build output
+# staging, intermediates, previews
 build/
 *.pak
-
-# Extracted / derived Larian assets. These are the game's own files -- they are
-# reproducible with tools/bg3extract.py from a local BG3 install and are not
-# redistributed here.
+# Larian's extracted files and third-party reference downloads: local only
 extracted/
-art/source/mesh/
-
-# Regenerable intermediates
-art/source/built_*.png
-art/source/base_*.png
-art/source/_iconwork/
-
-# Diagnostic textures (regenerate with art/make_diagnostic.sh / art/make_uvprobe.py)
-art/source/diag_base.png
-art/source/uvprobe.png
+*.zip
