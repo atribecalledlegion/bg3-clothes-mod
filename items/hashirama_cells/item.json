@@ -1,0 +1,60 @@
+{
+  "name": "Hashirama Cells",
+  "folder": "HashiramaCells",
+  "author": "dawil",
+  "mod_description": "A gold ring carrying the First Hokage's cells. Grants wood-style nature spells, castable once per turn without spell slots, using Wisdom for their save DC.",
+  "base": {
+    "label": "a gold gem ring (LOOT_GEN_Ring_A_Gem_A_Gold)",
+    "stat_parent": "_Ring_Magic",
+    "parent_template": "173aad0e-0db4-4f2f-8f24-49e6898b8f90",
+    "icon": "Item_LOOT_GEN_Ring_A_Gem_A_Gold"
+  },
+  "stat": "UNI_HashiramaCells",
+  "display_name": "Hashirama Cells",
+  "description": "The cells of the First Hokage still stir inside the gem. Roots and thorns answer the wearer's will, and wounds close almost as fast as they open.",
+  "rarity": "Legendary",
+  "value_level": 5,
+  "unique": false,
+  "treasure_tables": [
+    "TUT_Chest_Potions"
+  ],
+  "spell_ability": "Wisdom",
+  "spells": [
+    {
+      "spell": "Target_Entangle",
+      "use_costs": "ActionPoint:1",
+      "cooldown": "OncePerTurn"
+    },
+    {
+      "spell": "Target_SpikeGrowth",
+      "use_costs": "ActionPoint:1",
+      "cooldown": "OncePerTurn"
+    },
+    {
+      "spell": "Target_PlantGrowth",
+      "use_costs": "ActionPoint:1",
+      "cooldown": "OncePerTurn"
+    },
+    {
+      "spell": "Target_GraspingVine",
+      "use_costs": "BonusActionPoint:1",
+      "cooldown": "OncePerTurn"
+    },
+    {
+      "spell": "Wall_WallOfThorns",
+      "use_costs": "ActionPoint:1",
+      "cooldown": "OncePerTurn"
+    },
+    {
+      "spell": "Shout_SecondWind",
+      "use_costs": "BonusActionPoint:1",
+      "cooldown": "OncePerTurn"
+    }
+  ],
+  "ids": {
+    "mod": "387027e1-d79d-4117-9941-6937a4eb26da",
+    "item": "15b7b84b-04b0-46e2-9f64-78732aceb6ac",
+    "name_handle": "h478ad812g10f2g4530gbff5g033bad46f198",
+    "desc_handle": "h978be47cgb6a0g4fa7g8361g1a958814136d"
+  }
+}

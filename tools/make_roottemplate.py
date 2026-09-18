@@ -1,6 +1,6 @@
 """Generate the item's RootTemplates/_merged.lsx.
 
-Usage:  python tools/make_roottemplate.py <item>     (after make_visuals_node.py)
+Usage:  python tools/make_roottemplate.py <item>     (garment items: after make_visuals_node.py)
 
 Written whole each time rather than patched: the Visuals block is deeply nested, and a
 regex splice against it is how the file got a duplicated fragment and unbalanced tags.
@@ -55,15 +55,19 @@ HEAD = '''<?xml version="1.0" encoding="utf-8"?>
 					<attribute id="DisplayName" type="TranslatedString" handle="{nameh}" version="1" />
 					<attribute id="Description" type="TranslatedString" handle="{desch}" version="1" />
 					<attribute id="Icon" type="FixedString" value="{icon}" />
-					<children>
+'''
+
+EQUIPMENT_OPEN = '''					<children>
 						<node id="Equipment">
 							<children>
 '''
 
-TAIL = '''							</children>
+EQUIPMENT_CLOSE = '''							</children>
 						</node>
 					</children>
-				</node>
+'''
+
+TAIL = '''				</node>
 			</children>
 		</node>
 	</region>
@@ -72,12 +76,15 @@ TAIL = '''							</children>
 
 def main():
     it = itemlib.load()
-    vis = open(os.path.join(it.work, 'visuals_node.xml'), encoding='utf-8').read().rstrip('\n')
-    doc = HEAD.format(item=it.ids['item'], parent=it.garment['parent_template'],
+    doc = HEAD.format(item=it.ids['item'], parent=it.base['parent_template'],
                       nameh=it.ids['name_handle'], desch=it.ids['desc_handle'],
                       stat=it.stat, icon=it.icon)
-    doc += VISUALSET.format(preset=it.ids['preset'])
-    doc += vis + '\n' + TAIL
+    if it.garment or it.custom:
+        vis = open(os.path.join(it.work, 'visuals_node.xml'), encoding='utf-8').read().rstrip('\n')
+        doc += EQUIPMENT_OPEN + VISUALSET.format(preset=it.ids['preset'])
+        doc += vis + '\n' + EQUIPMENT_CLOSE
+    # A base item (e.g. a ring) inherits its whole appearance from the parent template.
+    doc += TAIL
     out = it.public + '/RootTemplates/_merged.lsx'
     itemlib.write(out, doc)
     n = doc.count('id="MapKey" type="guid"')

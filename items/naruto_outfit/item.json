@@ -1,0 +1,76 @@
+{
+  "name": "Naruto Outfit",
+  "folder": "NarutoOutfit",
+  "author": "dawil",
+  "mod_description": "Naruto's orange jacket and trousers, imported from a 3D model and fitted to BG3's human male body.",
+  "custom": {
+    "label": "imported Naruto meshes",
+    "stat_parent": "UNI_GaleRobe",
+    "parent_template": "9410a467-3e49-4b14-b067-ea8ad6a0d431",
+    "colour_preset": "fb21807c-fb57-194d-e7c8-848b37a4fb24",
+    "asset_dir": "Generated/Public/NarutoOutfit/Assets/Characters/Resources",
+    "sets": {
+      "pants": {
+        "code": "MP",
+        "gr2": "extracted/naruto-r/work/NARUTO_M_Pants.GR2",
+        "visual_bank": "Public/Shared/Content/Assets/Characters/Humans/[PAK]_Male_Clothing/_merged.lsf",
+        "vanilla_visual": "7a0fbf45-3619-b7f9-f405-2fd48bfd08cb",
+        "vanilla_material_id": "9ba4da80-7fc1-fdd1-d96d-2ff08194cd26",
+        "vanilla_material": "HUM_F_CLT_Pants_H",
+        "bank": "extracted/mesh/HUM_F_Clothing.lsf",
+        "bm": "NarutoOutfit_Pants_BM.DDS",
+        "msk": "NarutoOutfit_Pants_MSKcloth.DDS",
+        "body_types": [
+          "7d73f501-f65e-46af-a13b-2cacf3985d05"
+        ],
+        "gr2_as": "HUM_M_CLT_Pants_H_Short.GR2",
+        "hide_body_parts": false
+      },
+      "jacket": {
+        "code": "MJ",
+        "gr2": "extracted/naruto-r/work/NARUTO_M_Jacket.GR2",
+        "gr2_as": "HUM_M_CLT_Shirt_A.GR2",
+        "visual_bank": "Public/Shared/Content/Assets/Characters/Humans/[PAK]_Male_Clothing/_merged.lsf",
+        "vanilla_visual": "018e7693-3ebb-3a49-3caf-ebe16f7a2970",
+        "vanilla_material_id": "f028eb0c-03a3-e6ec-b341-bb415395fcb0",
+        "vanilla_material": "HUM_F_CLT_Pants_H",
+        "bank": "extracted/mesh/HUM_F_Clothing.lsf",
+        "bm": "NarutoOutfit_Jacket_BM.DDS",
+        "msk": "NarutoOutfit_Jacket_MSKcloth.DDS",
+        "keep_lods": [
+          0
+        ],
+        "body_types": [
+          "7d73f501-f65e-46af-a13b-2cacf3985d05"
+        ],
+        "hide_body_parts": false
+      }
+    }
+  },
+  "stat": "UNI_NarutoOutfit",
+  "display_name": "Naruto Outfit",
+  "description": "Orange and navy, worn by a certain loud ninja. Practical, if hard to hide in.",
+  "rarity": "Rare",
+  "value_level": 5,
+  "unique": false,
+  "treasure_tables": [
+    "TUT_Chest_Potions"
+  ],
+  "ids": {
+    "mod": "1e48d3b7-752d-4caf-98d8-0db009fcacd5",
+    "item": "381b5ec2-9e88-4e6b-9805-a0a2fda23bad",
+    "preset": "0d9f12c2-918c-45ad-8426-4d2d2b3c8bb1",
+    "nm": "0631a3c3-f416-49b2-8baa-a9087badcc41",
+    "pm": "e913fec5-bc6c-41ed-aa4e-487b89bde745",
+    "material_MP": "a890b905-0535-414d-81c9-594f65a1027c",
+    "bm_MP": "2ab73703-8460-4445-831f-187fce17d59e",
+    "msk_MP": "b61ab8da-6124-4fb1-8b79-7acad3d1efd0",
+    "visual_MP": "a1336f0c-47cd-4acd-a463-84abb3d3f50e",
+    "name_handle": "h78bf6646g205cg448ega5f7g649f56f25100",
+    "desc_handle": "he1a0ede1g8daag4116g9d88ge7afc3fa98ad",
+    "material_MJ": "aabd7490-ed11-47a3-9d00-d56aa64fcc41",
+    "bm_MJ": "d9780153-42b8-4e7d-ae14-5512863b5857",
+    "msk_MJ": "730b1827-8ea7-4691-a46a-5b52b3008b09",
+    "visual_MJ": "0461e575-0f22-440c-9c03-c34cb9402407"
+  }
+}

@@ -7,10 +7,29 @@ pipeline. Each item is a folder under `items/`; the tools are shared.
 |---|---|---|
 | [`obito_uchiha_robe`](items/obito_uchiha_robe) | purple robe, Uchiha crest on the back | crest composited in UV space (`art/make_textures.sh`) |
 | [`akatsuki_cloak`](items/akatsuki_cloak) | black robe, red clouds front, back and sleeves | decals baked in 3D (`tools/bake_decals.py`) |
+| [`hashirama_cells`](items/hashirama_cells) | vanilla gold gem ring granting six nature spells | none: reuses the vanilla ring's look |
+| [`naruto_outfit`](items/naruto_outfit) | orange jacket and trousers, imported from a 3D model | meshes cut, fitted and rigged (`tools/cut_static_mesh.py` -> `tools/make_custom_visual.py`) |
 
-Both are built on Gale's starting robe (`UNI_GaleRobe`), cover every body type except
-Dragonborn, and appear in the nautiloid tutorial chest. They are separate mods and can be
-enabled together.
+The robes are built on Gale's starting robe (`UNI_GaleRobe`) and cover every body type
+except Dragonborn. The Naruto outfit is its own imported mesh and covers **human male
+only**; it is unfinished (see its folder). Every item appears in the nautiloid tutorial
+chest. They are separate mods and can be enabled together.
+
+**Three kinds of item.**
+
+* A *garment* item (`"garment": "gale_robe"`) paints new textures onto a vanilla garment's
+  meshes, and gets its own banks, preset and icon.
+* A *base* item (`"base": {...}`) keeps a vanilla item's appearance and only adds stats, a
+  template, text and spells (the ring). Scaffold with
+  `python tools/new_item.py <id> <Folder> "<Name>" none`.
+* A *custom* item (`"custom": {...}`) ships **our own meshes** (GR2) for one or more body
+  types, fitted and rigged to a vanilla garment's skeleton. See
+  [importing a model](#importing-a-model).
+
+**Spells.** List them under `"spells"`, e.g.
+`{"spell": "Target_Entangle", "use_costs": "ActionPoint:1", "cooldown": "OncePerTurn"}`.
+Each becomes a copy of the vanilla spell with no spell-slot cost, granted through
+`UnlockSpell`, which is the same pattern vanilla magic items use.
 
 ---
 
@@ -61,6 +80,49 @@ This renders front/back/side views of both body types to
 
 Never change an item's `ids` once it has been played: saves refer to the item by UUID.
 
+Items are `Unique` by default. A unique item is only generated while none exists in
+the game, so it appears in the first summoned tutorial chest and never again. Set
+`"unique": false` (as the Akatsuki cloak does) to get one in every chest.
+
+## Importing a model
+
+An external model (a scan, or something generated) arrives as one fused static mesh with no
+skeleton, so it cannot just be dropped in. The chain, each step a tool that can be re-run:
+
+```bash
+python tools/cut_static_mesh.py <model.glb> out.obj --texture <atlas> --y LO HI --drop-skin [--flip-v]
+python tools/repose_sleeves.py out.obj posed.obj --shoulder X Y Z --target DX DY DZ --torso-half W
+"…/blender.exe" -b -P tools/blender_fit_garment.py -- --vanilla <vanilla.gltf> --mesh posed.obj --out rigged.gltf
+python tools/gltf_retarget.py <vanilla.gltf> rigged.gltf OUT.gltf
+"…/Divine.exe" -g bg3 -a convert-model -s OUT.gltf -d OUT.GR2 -e export-uvs -e export-normals -e export-tangents
+```
+
+1. **Cut** the garment out by texture colour and height; whole pieces that are mostly skin
+   (the hands) are dropped.
+2. **Repose** sleeves onto the target skeleton's arm direction. BG3 rests with the arms 58
+   degrees out; a model posed with arms down takes its bone weights from the chest and
+   deforms into the body. Legs usually need no reposing.
+3. **Fit** in Blender: scale onto the body, decimate to a game-sized triangle count, and
+   copy bone weights from the vanilla garment.
+4. **Retarget**, because LSLib's glTF importer crashes on Blender's skeleton layout: the
+   vanilla file's nodes and bind matrices are kept and only the vertex data is swapped,
+   with bones remapped by name.
+5. **Convert** to GR2, then declare it with `tools/make_custom_visual.py`.
+
+Then the item's `"custom"` block names, per body type, the vanilla visual to clone, the
+material to replace and the GR2 to ship. Notes worth having:
+
+* `--conform-path` binds to a vanilla skeleton but matches meshes BY NAME and copies the
+  donor's LODs; it can also write the mesh twice. Not required, and the models here are
+  built without it.
+* The GR2 must ship under `Generated/Public/<Mod>/...` and the visual's `SourceFile` **and**
+  `Template` must both point at it.
+* `"hide_body_parts": false` unless the imported mesh really covers what the donor covered:
+  a jacket with shorter sleeves otherwise leaves invisible arms and floating hands.
+* A model's UV layout is often cut into many small islands. A grid test texture then looks
+  like confetti in game **and** in an offline render -- that is correct, not a bug. Check by
+  rendering the packed GR2 against the packed DDS, which reproduces what the game draws.
+
 ## Layout
 
 ```
@@ -84,6 +146,11 @@ tools/
   make_mod_files.py    meta.lsx, localisation, Armor.txt, TreasureTable.txt
   make_neutral_maps.py flat normal / physical maps
   make_icon.py         inventory icons, rendered from the mesh
+  cut_static_mesh.py   cut a garment out of a fused imported model
+  repose_sleeves.py    rotate sleeves onto the target skeleton's arm direction
+  blender_fit_garment.py  fit, decimate and transfer bone weights (Blender, headless)
+  gltf_retarget.py     rebuild a fitted mesh around a vanilla skeleton for LSLib
+  make_custom_visual.py   VisualBank entries for our own GR2 meshes
   lspk.py, lsf.py, bg3extract.py   pak / LSF readers
 reference/             garment research: GALE_ROBE.md, UV_PLACEMENT.md
 extracted/             LOCAL ONLY -- Larian meshes and masks, reference downloads (ignored)

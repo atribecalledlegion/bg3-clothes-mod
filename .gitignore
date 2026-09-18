@@ -6,3 +6,8 @@ build/
 # Larian's extracted files and third-party reference downloads: local only
 extracted/
 *.zip
+
+# Naruto outfit: models and textures derived from the downloaded naruto-r model (and, via
+# conform, Larian's skeleton). Regenerate locally from the zip -- see items/naruto_outfit.
+items/naruto_outfit/src/Generated/
+items/naruto_outfit/src/Public/NarutoOutfit/Assets/Textures/

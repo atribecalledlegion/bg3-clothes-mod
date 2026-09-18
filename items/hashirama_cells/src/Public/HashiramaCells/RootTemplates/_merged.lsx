@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="0" lslib_meta="v1,bswap_guids,lsf_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="15b7b84b-04b0-46e2-9f64-78732aceb6ac" />
+					<attribute id="Name" type="LSString" value="UNI_HashiramaCells" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="Stats" type="FixedString" value="UNI_HashiramaCells" />
+					<attribute id="ParentTemplateId" type="FixedString" value="173aad0e-0db4-4f2f-8f24-49e6898b8f90" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h478ad812g10f2g4530gbff5g033bad46f198" version="1" />
+					<attribute id="Description" type="TranslatedString" handle="h978be47cgb6a0g4fa7g8361g1a958814136d" version="1" />
+					<attribute id="Icon" type="FixedString" value="Item_LOOT_GEN_Ring_A_Gem_A_Gold" />
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

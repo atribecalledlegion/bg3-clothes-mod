@@ -9,6 +9,7 @@
   "description": "Black cloth, red clouds. Those who recognise the pattern tend to find somewhere else to be.",
   "rarity": "Rare",
   "value_level": 5,
+  "unique": false,
   "treasure_tables": [
     "TUT_Chest_Potions"
   ],

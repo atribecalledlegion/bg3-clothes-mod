@@ -16,8 +16,11 @@ MAGICK = os.environ.get('MAGICK', r"C:/Program Files/ImageMagick-7.1.2-Q16-HDRI/
 
 # Every UUID an item needs. tools/new_item.py fills these with fresh random values; they
 # must never change once an item has been played, or saves lose the item.
-ID_KEYS = ['mod', 'item', 'name_handle', 'desc_handle', 'preset', 'nm', 'pm',
-           'material_M', 'bm_M', 'msk_M', 'material_F', 'bm_F', 'msk_F']
+BASE_ID_KEYS = ['mod', 'item', 'name_handle', 'desc_handle']
+# Only items with their own visuals (built on a garment) need these.
+GARMENT_ID_KEYS = ['preset', 'nm', 'pm',
+                   'material_M', 'bm_M', 'msk_M', 'material_F', 'bm_F', 'msk_F']
+ID_KEYS = BASE_ID_KEYS + GARMENT_ID_KEYS
 
 
 class Item:
@@ -28,11 +31,27 @@ class Item:
         if not os.path.exists(path):
             raise SystemExit('no item definition at %s' % path)
         self.cfg = json.load(open(path, encoding='utf-8'))
-        missing = [k for k in ID_KEYS if k not in self.cfg.get('ids', {})]
+        # Three kinds of item:
+        #   "garment": "<key>"  new textures on a vanilla garment's meshes (banks, preset)
+        #   "custom": {...}     our own imported meshes (GR2), one visual per body type
+        #   "base": {...}       reuses a vanilla item's look as-is; only stats, template,
+        #                       text and optional spells (e.g. a ring)
+        self.garment = GARMENTS[self.cfg['garment']] if self.cfg.get('garment') else None
+        self.custom = self.cfg.get('custom')
+        self.base = self.garment or self.custom or self.cfg['base']
+        if self.garment:
+            needed = ID_KEYS
+        elif self.custom:
+            # one texture set per imported mesh, named by its set code
+            needed = BASE_ID_KEYS + ['preset', 'nm', 'pm'] + [
+                k + '_' + s['code'] for s in self.base['sets'].values()
+                for k in ('material', 'bm', 'msk', 'visual')]
+        else:
+            needed = BASE_ID_KEYS
+        missing = [k for k in needed if k not in self.cfg.get('ids', {})]
         if missing:
             raise SystemExit('%s: ids missing %s' % (path, ', '.join(missing)))
         self.ids = self.cfg['ids']
-        self.garment = GARMENTS[self.cfg['garment']]
         f = self.folder = self.cfg['folder']
 
         self.src = os.path.join(self.dir, 'src')
@@ -56,14 +75,15 @@ class Item:
 
     @property
     def icon(self):
-        return 'Item_' + self.cfg['stat']
+        # Garment items render their own icon; base items reuse the vanilla item's.
+        return self.base.get('icon') or 'Item_' + self.cfg['stat']
 
     def sets(self):
-        """(tag, garment set, item-specific ids) per texture set."""
-        for tag, s in self.garment['sets'].items():
+        """(tag, set definition, item-specific ids) per texture set."""
+        for tag, s in self.base['sets'].items():
             c = s['code']
             yield tag, s, dict(material=self.ids['material_' + c], bm=self.ids['bm_' + c],
-                               msk=self.ids['msk_' + c])
+                               msk=self.ids['msk_' + c], visual=self.ids.get('visual_' + c))
 
 
 def load(argv=None):

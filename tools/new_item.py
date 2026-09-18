@@ -1,6 +1,6 @@
 """Scaffold a new item with fresh UUIDs.
 
-    python tools/new_item.py <item_id> <Folder> "<Display Name>" [garment]
+    python tools/new_item.py <item_id> <Folder> "<Display Name>" [garment | none]
 
     python tools/new_item.py akatsuki_cloak AkatsukiCloak "Akatsuki Cloak"
 
@@ -14,7 +14,7 @@ refers to the item template by UUID.
 """
 import json, os, sys, uuid
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from item import ID_KEYS, ROOT
+from item import ID_KEYS, BASE_ID_KEYS, ROOT
 from garment import GARMENTS
 
 
@@ -28,12 +28,13 @@ def main():
         raise SystemExit(__doc__)
     item_id, folder, name = sys.argv[1:4]
     garment = sys.argv[4] if len(sys.argv) > 4 else 'gale_robe'
-    if garment not in GARMENTS:
+    if garment != 'none' and garment not in GARMENTS:
         raise SystemExit('unknown garment %r (have: %s)' % (garment, ', '.join(GARMENTS)))
     path = os.path.join(ROOT, 'items', item_id, 'item.json')
     if os.path.exists(path):
         raise SystemExit('%s already exists -- not overwriting its IDs' % path)
-    ids = {k: (handle() if k.endswith('_handle') else str(uuid.uuid4())) for k in ID_KEYS}
+    keys = BASE_ID_KEYS if garment == 'none' else ID_KEYS
+    ids = {k: (handle() if k.endswith('_handle') else str(uuid.uuid4())) for k in keys}
     cfg = {
         'name': name,
         'folder': folder,
@@ -53,6 +54,13 @@ def main():
                  'images': {}, 'decals': []},
         'ids': ids,
     }
+    if garment == 'none':
+        # reuses a vanilla item's look; fill in "base" from its stats and root template
+        for k in ('garment', 'visual_prefix', 'neutral_maps', 'icon_view', 'bake'):
+            del cfg[k]
+        cfg['base'] = {'label': '', 'stat_parent': '', 'parent_template': '', 'icon': ''}
+        cfg['spells'] = []
+        cfg = {k: cfg[k] for k in sorted(cfg, key=lambda k: k == 'ids')}
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(cfg, f, indent=2)

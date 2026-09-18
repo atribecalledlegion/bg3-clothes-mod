@@ -1,0 +1,52 @@
+// Spells granted by the item (Boosts UnlockSpell in Armor.txt).
+//
+// Each is a copy of a vanilla spell ("using") with only its cost and cooldown replaced.
+// Removing SpellSlotsGroup from UseCosts is what makes the cast free; the action or bonus
+// action it needs is kept. Vanilla does the same for item spells, e.g.
+// Target_MAG_Druid_Armor_PlantGrowth: using Target_PlantGrowth, UseCosts ActionPoint:1,
+// Cooldown OncePerShortRestPerItem.
+//
+// Copies are granted rather than the originals: unlocking Target_Entangle itself would
+// cast from the wearer's spell slots, and a character with none could not use it.
+
+new entry "Target_HashiramaCells_Entangle"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_Entangle"
+data "UseCosts" "ActionPoint:1"
+data "Cooldown" "OncePerTurn"
+
+new entry "Target_HashiramaCells_SpikeGrowth"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_SpikeGrowth"
+data "UseCosts" "ActionPoint:1"
+data "Cooldown" "OncePerTurn"
+
+new entry "Target_HashiramaCells_PlantGrowth"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_PlantGrowth"
+data "UseCosts" "ActionPoint:1"
+data "Cooldown" "OncePerTurn"
+
+new entry "Target_HashiramaCells_GraspingVine"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_GraspingVine"
+data "UseCosts" "BonusActionPoint:1"
+data "Cooldown" "OncePerTurn"
+
+new entry "Wall_HashiramaCells_WallOfThorns"
+type "SpellData"
+data "SpellType" "Wall"
+using "Wall_WallOfThorns"
+data "UseCosts" "ActionPoint:1"
+data "Cooldown" "OncePerTurn"
+
+new entry "Shout_HashiramaCells_SecondWind"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_SecondWind"
+data "UseCosts" "BonusActionPoint:1"
+data "Cooldown" "OncePerTurn"

@@ -26,7 +26,7 @@ import item as itemlib
 
 def main():
     it = itemlib.load()
-    src_preset = it.garment['colour_preset']
+    src_preset = it.base['colour_preset']
     p = Pak(os.path.join(itemlib.DATA, 'Shared.pak'))
     f = LSF(p.read('Public/Shared/Content/Assets/Characters/[PAK]_Character_Presets/_merged.lsf'))
     kids = {}

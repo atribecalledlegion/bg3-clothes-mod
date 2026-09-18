@@ -29,6 +29,22 @@ def run(cmd):
 def main():
     it = itemlib.load()
     py = sys.executable
+    if it.custom:
+        # imported meshes: our own GR2 per body type, the model's atlas as base colour
+        if '--art' in sys.argv:
+            run([py, it['art'][1] if it.get('art') else 'items/%s/art/make_textures.py' % it.id, it.id])
+            run([py, 'tools/make_neutral_maps.py', it.id])
+        for step in ('make_content_bank', 'make_custom_visual', 'make_preset', 'merge_banks',
+                     'make_roottemplate', 'make_mod_files'):
+            run([py, 'tools/%s.py' % step, it.id])
+        print('\ndone: %s.  Pack with  .\\build.ps1 -Item %s -Install' % (it.id, it.id))
+        return
+    if not it.garment:
+        # A base item (e.g. a ring) reuses a vanilla look: no textures, banks or icon.
+        for step in ('make_roottemplate', 'make_mod_files'):
+            run([py, 'tools/%s.py' % step, it.id])
+        print('\ndone: %s.  Pack with  .\\build.ps1 -Item %s -Install' % (it.id, it.id))
+        return
     if '--art' in sys.argv:
         if it.get('art'):
             run(it['art'])

@@ -1,0 +1,12 @@
+// Hashirama Cells -- based on a gold gem ring (LOOT_GEN_Ring_A_Gem_A_Gold) (_Ring_Magic).
+// "using" inherits ArmorClass / Weight / slot / proficiency from the vanilla entry,
+// so only the differences need to be stated here.
+
+new entry "UNI_HashiramaCells"
+type "Armor"
+using "_Ring_Magic"
+data "RootTemplate" "15b7b84b-04b0-46e2-9f64-78732aceb6ac"
+data "Rarity" "Legendary"
+data "ValueLevel" "5"
+data "Unique" "0"
+data "Boosts" "UnlockSpell(Target_HashiramaCells_Entangle,,,,Wisdom);UnlockSpell(Target_HashiramaCells_SpikeGrowth,,,,Wisdom);UnlockSpell(Target_HashiramaCells_PlantGrowth,,,,Wisdom);UnlockSpell(Target_HashiramaCells_GraspingVine,,,,Wisdom);UnlockSpell(Wall_HashiramaCells_WallOfThorns,,,,Wisdom);UnlockSpell(Shout_HashiramaCells_SecondWind,,,,Wisdom)"

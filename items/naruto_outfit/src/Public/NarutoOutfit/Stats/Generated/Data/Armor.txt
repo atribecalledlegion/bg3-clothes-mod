@@ -1,0 +1,11 @@
+// Naruto Outfit -- based on imported Naruto meshes (UNI_GaleRobe).
+// "using" inherits ArmorClass / Weight / slot / proficiency from the vanilla entry,
+// so only the differences need to be stated here.
+
+new entry "UNI_NarutoOutfit"
+type "Armor"
+using "UNI_GaleRobe"
+data "RootTemplate" "381b5ec2-9e88-4e6b-9805-a0a2fda23bad"
+data "Rarity" "Rare"
+data "ValueLevel" "5"
+data "Unique" "0"
