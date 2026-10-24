@@ -1,0 +1,13 @@
+# Skyrim projects: third-party and derived files stay local only (regenerate with each project's tools)
+build/
+__pycache__/
+
+# Uchiha Clan scripts (extracted from UchihaClan.bsa, patched by kamui_realm_fix/tools/patch_kamui_scripts.py)
+kamui_realm_fix/Scripts/Source/aaa*.psc
+
+# Meshes and audio derived from other mods / the anime (Shuriken Spells and Scrolls, Uchiha Clan, vanilla effects)
+sharingan_copy/assets/*.nif
+sharingan_copy/assets/*.wav
+
+# RaceMenu exports of the Yugito head (derived from the game's head meshes)
+six_paths_of_pain/exports/

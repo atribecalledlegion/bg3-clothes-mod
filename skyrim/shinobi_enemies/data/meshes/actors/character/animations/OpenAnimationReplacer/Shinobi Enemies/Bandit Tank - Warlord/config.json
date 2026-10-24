@@ -1,0 +1,55 @@
+{
+    "name": "Bandit Tank - Warlord",
+    "description": "Bandits with a one-handed weapon and a shield: For Honor Warlord (shield bashes, headbutts).",
+    "priority": 1100000001,
+    "conditions": [
+        {
+            "condition": "HasKeyword",
+            "requiredVersion": "1.0.0.0",
+            "Keyword": {
+                "form": {
+                    "pluginName": "Shinobi Enemies.esp",
+                    "formID": "800"
+                }
+            }
+        },
+        {
+            "condition": "OR",
+            "requiredVersion": "1.0.0.0",
+            "Conditions": [
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 1.0
+                    },
+                    "Left hand": false
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 3.0
+                    },
+                    "Left hand": false
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 4.0
+                    },
+                    "Left hand": false
+                }
+            ]
+        },
+        {
+            "condition": "IsEquippedType",
+            "requiredVersion": "1.0.0.0",
+            "Type": {
+                "value": 11.0
+            },
+            "Left hand": true
+        }
+    ]
+}

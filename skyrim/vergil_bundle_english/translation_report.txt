@@ -1,0 +1,271 @@
+Anchor spell for MCO.esp             1 strings translated
+   SPEL.FULL  EX Sword (데미지)  ->  EX Sword (Damage)
+BonoKustomSlash.esp                  0 strings translated
+ChaosYamato.esp                      8 strings translated
+   MGEF.FULL  야마토 이펙트  ->  Yamato Effect
+   MGEF.DNAM  인트로 이펙트  ->  Intro effect.
+   MGEF.FULL  스탠스 토글 - Iai  ->  Stance Toggle - Iai
+   MGEF.FULL  스탠스 토글 - Open  ->  Stance Toggle - Open
+   SPEL.FULL  스탠스 토글 - Open  ->  Stance Toggle - Open
+   SPEL.FULL  스탠스 토글 - Iai  ->  Stance Toggle - Iai
+   ARMO.FULL  마검 야마토의 칼집  ->  Yamato Scabbard
+   WEAP.FULL  마검 야마토  ->  Yamato
+Flames of Coldharbour.esp          236 strings translated
+   MGEF.FULL  차가운 불꽃의 망토  ->  Cloak of Cold Flames
+   MGEF.DNAM  <dur>초 동안 근처의 적은 초당 <mag> 냉기 피해를 입습니다. 냉기 파이어 대상은 시간이 지남에 따라  ->  For <dur> seconds, nearby enemies take <mag> frost damage per second. 
+   MGEF.FULL  차가운 불꽃의 망토  ->  Cloak of Cold Flames
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  초당 <mag> 냉기 피해를 입히는 벽을 생성합니다. 냉기 화염  대상은 시간이 지남에 따라 추가 피해를 입  ->  Creates a wall of cold flames that does <mag> frost damage per second.
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  초당 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를 입습니다.  ->  Does <mag> frost damage per second. Targets on coldfire take extra dam
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  초당 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를 입습니다.  ->  Does <mag> frost damage per second. Targets on coldfire take extra dam
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  초당 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를 입습니다.  ->  Does <mag> frost damage per second. Targets on coldfire take extra dam
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를 입습니다.  ->  Does <mag> frost damage. Targets on coldfire take extra damage over ti
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를 입습니다.  ->  Does <mag> frost damage. Targets on coldfire take extra damage over ti
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  넓은 지역에 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를 입습니다.  ->  Does <mag> frost damage in a wide area. Targets on coldfire take extra
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  넓은 지역에 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를 입습니다.  ->  Does <mag> frost damage in a wide area. Targets on coldfire take extra
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  광범위한 지역에 최대 <mag> 냉기 피해를 입힙니다. 근처에 있는 대상은 추가 피해를 입습니다. 냉기 화염  ->  Does up to <mag> frost damage over a large area; targets nearby take e
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  근접 범위에 있는 적에게 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를  ->  Does <mag> frost damage to enemies at close range. Targets on coldfire
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  근접 범위에 있는 적에게 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를  ->  Does <mag> frost damage to enemies at close range. Targets on coldfire
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  근접 범위에 있는 적에게 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를  ->  Does <mag> frost damage to enemies at close range. Targets on coldfire
+   MGEF.FULL  냉기 화염  데미지  ->  Coldfire Damage
+   MGEF.DNAM  근접 범위에 있는 적에게 <mag> 냉기 피해를 입힙니다. 냉기 화염 대상은 시간이 지남에 따라 추가 피해를  ->  Does <mag> frost damage to enemies at close range. Targets on coldfire
+   MGEF.FULL  냉기 화염 위험  ->  Coldfire Hazard
+   MGEF.FULL  냉기 화염 위험  ->  Coldfire Hazard
+   MGEF.FULL  퍽 충격 비틀거림  ->  Perk Impact Stagger
+   MGEF.FULL  지팡이 마법부여   ->  Staff Enchantment
+   MGEF.FULL  지팡이 마법부여   ->  Staff Enchantment
+   MGEF.FULL  지팡이 마법부여   ->  Staff Enchantment
+   MGEF.FULL  냉기 화염 룬  ->  Coldfire Rune
+   MGEF.DNAM  적이 접근하면 폭발하여 <mag> 냉기 피해를 입히는 룬을 생성합니다. 냉기 화염 대상은 시간이 지남에 따라  ->  Creates a rune that explodes when an enemy comes near, doing <mag> fro
+   MGEF.FULL  상급 냉기 화염 룬  ->  Greater Coldfire Rune
+   MGEF.DNAM  적이 접근하면 폭발하여 <mag> 냉기 피해를 입히는 룬을 생성합니다. 냉기 화염 대상은 시간이 지남에 따라  ->  Creates a rune that explodes when an enemy comes near, doing <mag> fro
+   MGEF.FULL  지팡이 마법부여   ->  Staff Enchantment
+   MGEF.FULL  퍽 충격 비틀거림  ->  Perk Impact Stagger
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  물방울  제어장치  ->  Droplet Control
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  둔화  ->  Slow
+   MGEF.FULL  헬 온 어스  ->  Hell on Earth
+   ENCH.FULL  냉기 화염 볼트  ->  Coldfire Bolt
+   ENCH.FULL  차가운 불꽃  ->  Cold Flames
+   ENCH.FULL  냉기 화염구  ->  Coldfire Ball
+   ENCH.FULL  차가운 불꽃의 벽  ->  Wall of Cold Flames
+   ENCH.FULL  냉기 연소   ->  Cold Incineration
+   ENCH.FULL  냉기 폭발  ->  Cold Blast
+   ENCH.FULL  최상급 냉기 화염   ->  Master Coldfire
+   ENCH.FULL  냉기 화염 폭설  ->  Coldfire Blizzard
+   ENCH.FULL  냉기 화염 룬  ->  Coldfire Rune
+   ENCH.FULL  상급 냉기 화염 룬  ->  Greater Coldfire Rune
+   ENCH.FULL  냉기 화염 룬  ->  Coldfire Rune
+   ENCH.FULL  냉기 화염 룬  ->  Coldfire Rune
+   SPEL.FULL  냉기 화염 볼트  ->  Coldfire Bolt
+   SPEL.FULL  차가운 불꽃  ->  Cold Flames
+   SPEL.FULL  냉기 화염구  ->  Coldfire Ball
+   SPEL.FULL  냉기 화염 망토   ->  Coldfire Cloak
+   SPEL.FULL  냉기 화염 폭풍  ->  Coldfire Storm
+   SPEL.FULL  차가운 불꽃의 벽  ->  Wall of Cold Flames
+   SPEL.FULL  차가운 불꽃  ->  Cold Flames
+   SPEL.FULL  냉기 연소   ->  Cold Incineration
+   SPEL.FULL  냉기 불타는 손길   ->  Cold Burning Touch
+   SPEL.FULL  냉기 폭발   ->  Cold Blast
+   SPEL.FULL  최상급 냉기 화염   ->  Master Coldfire
+   SPEL.FULL  냉기 화염 손길   ->  Coldfire Touch
+   SPEL.FULL  냉기 화염 폭설  ->  Coldfire Blizzard
+   SPEL.FULL  검은 냉기   ->  Black Frost
+   SPEL.FULL  거머쥔 냉기 화염   ->  Clutching Coldfire
+   SPEL.FULL  냉기 화염   ->  Coldfire
+   SPEL.FULL  냉기 화염   ->  Coldfire
+   SPEL.FULL  냉기 화염 룬  ->  Coldfire Rune
+   SPEL.FULL  상급 냉기 화염 룬  ->  Greater Coldfire Rune
+   SPEL.FULL  냉기 화염   ->  Coldfire
+   SPEL.FULL  낙화 제어장치 능력   ->  Fall Control Ability
+   SPEL.FULL  서리 슬로우  ->  Frost Slow
+   SPEL.FULL  헬 온 어스  ->  Hell on Earth
+   SPEL.DESC  헬 온 어스  ->  Hell on Earth
+   SPEL.DESC  헬 온 어스  ->  Hell on Earth
+   SCRL.FULL  냉기 화염 볼트 두루마리  ->  Scroll of Coldfire Bolt
+   SCRL.FULL  냉기 화염구  두루마리  ->  Scroll of Coldfire Ball
+   SCRL.FULL  냉기 화염  망토 두루마리  ->  Scroll of Coldfire Cloak
+   SCRL.FULL  폭풍 냉기 화염 두루마리  ->  Scroll of Coldfire Storm
+   SCRL.FULL  냉기 연소 두루마리  ->  Scroll of Cold Incineration
+   SCRL.FULL  냉기 불타는 손길 두루마리  ->  Scroll of Cold Burning Touch
+   SCRL.FULL  냉기 폭발 두루마리  ->  Scroll of Cold Blast
+   SCRL.FULL  냉기 화염 손길 두루마리   ->  Scroll of Coldfire Touch
+   SCRL.FULL  검은 냉기 두루마리   ->  Scroll of Black Frost
+   SCRL.FULL  거머쥔 냉기 화염 두루마리  ->  Scroll of Clutching Coldfire
+   SCRL.FULL  냉기 화염 룬 두루마리  ->  Scroll of Coldfire Rune
+   SCRL.FULL  상급 냉기 화염  룬 두루마리  ->  Scroll of Greater Coldfire Rune
+   BOOK.FULL  마법책: 냉기 화염   ->  Spell Tome: Coldfire
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 화염 볼트  ->  Spell Tome: Coldfire Bolt
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 화염구  ->  Spell Tome: Coldfire Ball
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 화염 망토  ->  Spell Tome: Coldfire Cloak
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 화염 폭풍  ->  Spell Tome: Coldfire Storm
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 차가운 불꽃의 벽  ->  Spell Tome: Wall of Cold Flames
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 연소  ->  Spell Tome: Cold Incineration
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 불타는 손길  ->  Spell Tome: Cold Burning Touch
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 폭발  ->  Spell Tome: Cold Blast
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 최상급 냉기 화염   ->  Spell Tome: Master Coldfire
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 화염 손길  ->  Spell Tome: Coldfire Touch
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 검은 냉기  ->  Spell Tome: Black Frost
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 화염 폭설   ->  Spell Tome: Coldfire Blizzard
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 거머쥔 냉기 화염  ->  Spell Tome: Clutching Coldfire
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 냉기 화염 룬  ->  Spell Tome: Coldfire Rune
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  마법책: 최상급 냉기 화염 룬  ->  Spell Tome: Master Coldfire Rune
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 화염   ->  Atronach Forge Recipe - Spell Tome: Coldfire
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 화염   ->  Spell Tome: Coldfire
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 화염 볼트  ->  Atronach Forge Recipe - Spell Tome: Coldfire Bolt
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 화염 볼트  ->  Spell Tome: Coldfire Bolt
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 붙타는 손길  ->  Atronach Forge Recipe - Spell Tome: Cold Burning Touch
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 불타는 손길  ->  Spell Tome: Cold Burning Touch
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 화염 룬  ->  Atronach Forge Recipe - Spell Tome: Coldfire Rune
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 화염 룬  ->  Spell Tome: Coldfire Rune
+   BOOK.FULL  아트로나크 포지 제작서 - 마법책: 냉기 화염구  ->  Atronach Forge Recipe - Spell Tome: Coldfire Ball
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서:냉기 화염구  ->  Spell Tome: Coldfire Ball
+   BOOK.FULL  아트로나크 포지 제작서 - 마법책: 냉기 화염 망토   ->  Atronach Forge Recipe - Spell Tome: Coldfire Cloak
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 화염 망토  ->  Spell Tome: Coldfire Cloak
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 최상급 냉기 화염   ->  Atronach Forge Recipe - Spell Tome: Master Coldfire
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 최상급 냉기 화염   ->  Spell Tome: Master Coldfire
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 화염 손길   ->  Atronach Forge Recipe - Spell Tome: Coldfire Touch
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 화염 손길  ->  Spell Tome: Coldfire Touch
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 연소   ->  Atronach Forge Recipe - Spell Tome: Cold Incineration
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 연소  ->  Spell Tome: Cold Incineration
+   BOOK.FULL  아트로나크 포지 제작서 - 마법책: 차가운 불꽃의 벽  ->  Atronach Forge Recipe - Spell Tome: Wall of Cold Flames
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 차가운 불꽃의 벽  ->  Spell Tome: Wall of Cold Flames
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 거머쥔 냉기 화염   ->  Atronach Forge Recipe - Spell Tome: Clutching Coldfire
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 거머쥔 냉기 화염  ->  Spell Tome: Clutching Coldfire
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 최상금 냉기 화염 룬  ->  Atronach Forge Recipe - Spell Tome: Master Coldfire Rune
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 최상급 냉기 화염 룬  ->  Spell Tome: Master Coldfire Rune
+   BOOK.FULL  아트로나크 포지 제작서 - 마법책: 냉기 폭발  ->  Atronach Forge Recipe - Spell Tome: Cold Blast
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 폭발  ->  Spell Tome: Cold Blast
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 화염 폭설   ->  Atronach Forge Recipe - Spell Tome: Coldfire Blizzard
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 냉기 화염 폭설  ->  Spell Tome: Coldfire Blizzard
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 냉기 화염 폭풍   ->  Atronach Forge Recipe - Spell Tome: Coldfire Storm
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 콜드 화염 폭풍  ->  Spell Tome: Coldfire Storm
+   BOOK.FULL  아트로나크 포지 레시피 - 마법책: 검은 냉기   ->  Atronach Forge Recipe - Spell Tome: Black Frost
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  주문서: 검은 냉기  ->  Spell Tome: Black Frost
+   BOOK.FULL  아트로나크 포지 레시피 - 냉기 화염 지팡이  ->  Atronach Forge Recipe - Staff of Coldfire
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  차가운 불꽃의 지팡이  ->  Staff of Cold Flames
+   BOOK.FULL  아트로나크 포지 레시피 - 냉기 화염 볼트 지팡이   ->  Atronach Forge Recipe - Staff of Coldfire Bolt
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.FULL  아트로나크 포지 레시피 - 냉기 화염 룬의 지팡이  ->  Atronach Forge Recipe - Staff of Coldfire Rune
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  냉기 화염룬 지팡이  ->  Staff of Coldfire Rune
+   BOOK.FULL  아트로나크 포지 레시피 - 냉기 화염구 지팡이   ->  Atronach Forge Recipe - Staff of Coldfire Ball
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  냉기 화염구 지팡이   ->  Staff of Coldfire Ball
+   BOOK.FULL  아트로나크 포지 레시피 - 상급 냉기 화염의 지팡이  ->  Atronach Forge Recipe - Staff of Greater Coldfire
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  최상급 냉기 화염 지팡이   ->  Staff of Master Coldfire
+   BOOK.FULL  아트로나크 포지 레시피 - 냉기 화염 지팡이   ->  Atronach Forge Recipe - Staff of Coldfire
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  냉기 화염 연소 지팡이   ->  Staff of Cold Incineration
+   BOOK.FULL  아트로나크 포지 레시피 - 차가운 불꽃의 벽 지팡이  ->  Atronach Forge Recipe - Staff of Wall of Cold Flames
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  차가운 불꽃의 벽 지팡이  ->  Staff of Wall of Cold Flames
+   BOOK.FULL  아트로나크 포지 레시피 - 최상금 냉기 화염룬 지팡이   ->  Atronach Forge Recipe - Staff of Master Coldfire Rune
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  상급 냉기 화염 룬의 지팡이  ->  Staff of Greater Coldfire Rune
+   BOOK.FULL  아트로나크 포지 레시피 - 냉기 폭발의 지팡이  ->  Atronach Forge Recipe - Staff of Cold Blast
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  냉기 폭발의 지팡이  ->  Staff of Cold Blast
+   BOOK.FULL  아트로나크 포지 레시피 - 냉기 화염 폭설  지팡이  ->  Atronach Forge Recipe - Staff of Coldfire Blizzard
+   BOOK.DESC  <p align='center'><font face='$HandwrittenFont'><font size='  ->  <p align='center'><font face='$HandwrittenFont'><font size='18'> /  
+   BOOK.CNAM  냉기 화염 폭설 지팡이  ->  Staff of Coldfire Blizzard
+   BOOK.FULL  헬 온 어스  ->  Hell on Earth
+   BOOK.DESC  <font face'$HandwrittenFont'><font size='40'><p align='cente  ->  <font face'$HandwrittenFont'><font size='40'><p align='center'> / Fir
+   WEAP.FULL  냉기 화염구 지팡이  ->  Staff of Coldfire Ball
+   WEAP.FULL  냉기 화염 볼트 지팡이  ->  Staff of Coldfire Bolt
+   WEAP.FULL  냉기 화염룬 지팡이  ->  Staff of Coldfire Rune
+   WEAP.FULL  차가운 불꽃의 지팡이  ->  Staff of Cold Flames
+   WEAP.FULL  냉기 화염 폭설 지팡이  ->  Staff of Coldfire Blizzard
+   WEAP.FULL  상급 냉기 화염 룬의 지팡이  ->  Staff of Greater Coldfire Rune
+   WEAP.FULL  상급 냉기 화염 지팡이  ->  Staff of Greater Coldfire
+   WEAP.FULL  냉기 폭발의 지팡이  ->  Staff of Cold Blast
+   WEAP.FULL  냉기 연소 지팡이   ->  Staff of Cold Incineration
+   WEAP.FULL  차가운 화염 벽의 지팡이  ->  Staff of Wall of Cold Flames
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   HAZD.FULL  냉기 화염   ->  Coldfire
+   PERK.FULL  물방울  제어장치 퍽   ->  Droplet Control Perk
+InvisibleEffect.esp                  0 strings translated
+JCEfxPIE.esp                         8 strings translated
+   MGEF.FULL  얼티밋 슬레이 : 템페스트 쿨타임  ->  Ultimate Slay: Tempest Cooldown
+   MGEF.FULL  얼티밋 슬레이 : 보이드 래피드 쿨타임  ->  Ultimate Slay: Void Rapid Cooldown
+   MGEF.FULL  얼티밋 슬레이 : 헬 온 어스 쿨타임  ->  Ultimate Slay: Hell on Earth Cooldown
+   MGEF.FULL  얼티밋 슬레이 : 보이드 래피드 준비  ->  Ultimate Slay: Void Rapid Ready
+   SPEL.FULL  얼티밋 슬레이 : 템페스트 쿨타임  ->  Ultimate Slay: Tempest Cooldown
+   SPEL.FULL  얼티밋 슬레이 : 보이드 래피드 쿨타임  ->  Ultimate Slay: Void Rapid Cooldown
+   SPEL.FULL  얼티밋 슬레이 : 헬 온 어스 쿨타임  ->  Ultimate Slay: Hell on Earth Cooldown
+   SPEL.FULL  얼티밋 슬레이 : 보이드 래피드 준비  ->  Ultimate Slay: Void Rapid Ready
+Magistrate Levitate.esp              3 strings translated
+   BOOK.FULL  마법 책 : Levitate  ->  Spell Tome: Levitate
+   CELL.FULL  성취의 전당  ->  Hall of Attainment
+   WRLD.FULL  스카이림  ->  Skyrim
+NotEnoughAttackEffect.esp            2 strings translated
+   SPEL.FULL  버질 순간이동  ->  Vergil Teleport
+   SPEL.FULL  공중,지상 저지먼트 컷  ->  Judgement Cut (Air and Ground)
+OmecaOneVergilSDT.esp                3 strings translated
+   MGEF.FULL  진 데빌 트리거 모드  ->  Sin Devil Trigger Mode
+   SPEL.FULL  진 데빌 트리거 모드  ->  Sin Devil Trigger Mode
+   SPEL.DESC  진정한 악마의 힘을 개방합니다, 모든 능력이 극한으로 강화됩니다  ->  Unleashes true demonic power: every ability is pushed to its limit.
+SummonSwords.esp                     0 strings translated

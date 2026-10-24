@@ -1,0 +1,25 @@
+{
+    "name": "Bandit Chief - Kenjutsu Axe",
+    "description": "Bandit chiefs with a battleaxe or warhammer: Olivier Kenjutsu BattleAxe.",
+    "priority": 1100000002,
+    "conditions": [
+        {
+            "condition": "HasKeyword",
+            "requiredVersion": "1.0.0.0",
+            "Keyword": {
+                "form": {
+                    "pluginName": "Shinobi Enemies.esp",
+                    "formID": "805"
+                }
+            }
+        },
+        {
+            "condition": "IsEquippedType",
+            "requiredVersion": "1.0.0.0",
+            "Type": {
+                "value": 6.0
+            },
+            "Left hand": false
+        }
+    ]
+}

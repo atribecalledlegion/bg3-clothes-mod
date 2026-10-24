@@ -1,0 +1,2 @@
+IsEquippedRightType(2) AND
+HasMagicEffect("Shinobi Enemies.esp" | 0x0008F7)
