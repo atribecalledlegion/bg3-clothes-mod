@@ -92,7 +92,8 @@ def main():
     neutral = [(it.ids['nm'], f + '_NM', f + '_NM.DDS', 'normalmap'),
                (it.ids['pm'], f + '_PM', f + '_PM.DDS', 'physicalmap')]
     textures, materials = [], []
-    for n, (tag, s, ids) in enumerate(it.sets()):
+    for n, (tag, s, ids) in enumerate(list(it.sets()) + list(it.extra_materials())):
+        size = s.get('size', 2048)
         lsf = LSF(open(s['bank'], 'rb').read())
         midx, mattr, mkids = find_material(lsf, s['vanilla_material'])
         bm = (ids['bm'], '%s_%s_BM' % (f, s['code']), s['bm'])
@@ -103,13 +104,15 @@ def main():
             entries += [(u, nm, fn) for u, nm, fn, _ in neutral]
         for uid, name, fn in entries:
             srgb = 'True' if fn.endswith('_BM.DDS') else 'False'
+            # the neutral maps are always 2048; this set's own textures may be smaller
+            dim = 2048 if (uid, name, fn) in [(u, nm, f2) for u, nm, f2, _ in neutral] else size
             textures += ['\t\t\t\t<node id="Resource">',
                          attr('ID', 'FixedString', uid),
                          attr('Name', 'LSString', name),
                          attr('SourceFile', 'LSString', '%s/%s' % (it.texture_asset, fn)),
                          attr('Template', 'FixedString', name),
-                         attr('Width', 'int32', 2048),
-                         attr('Height', 'int32', 2048),
+                         attr('Width', 'int32', dim),
+                         attr('Height', 'int32', dim),
                          attr('Depth', 'int32', 1),
                          attr('Type', 'int32', 1),
                          attr('SRGB', 'bool', srgb),

@@ -1,0 +1,11 @@
+// Naruto Outfit (Simple) -- based on retextured vanilla shirt and shorts (UNI_GaleRobe).
+// "using" inherits ArmorClass / Weight / slot / proficiency from the vanilla entry,
+// so only the differences need to be stated here.
+
+new entry "UNI_NarutoOutfitSimple"
+type "Armor"
+using "UNI_GaleRobe"
+data "RootTemplate" "0da1a2ae-44b9-4eec-b7ec-e075c9ec426a"
+data "Rarity" "Rare"
+data "ValueLevel" "5"
+data "Unique" "0"

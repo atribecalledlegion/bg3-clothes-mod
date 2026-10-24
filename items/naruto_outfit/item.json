@@ -2,7 +2,8 @@
   "name": "Naruto Outfit",
   "folder": "NarutoOutfit",
   "author": "dawil",
-  "mod_description": "Naruto's orange jacket and trousers, imported from a 3D model and fitted to BG3's human male body.",
+  "build": 19,
+  "mod_description": "Naruto's orange jacket and trousers, imported from a 3D model and fitted to BG3's human male body. Based on \"Naruto Rigged\" by SniperAmbush (sketchfab.com/rithul.kamesh), CC-BY-4.0.",
   "custom": {
     "label": "imported Naruto meshes",
     "stat_parent": "UNI_GaleRobe",
@@ -24,7 +25,7 @@
           "7d73f501-f65e-46af-a13b-2cacf3985d05"
         ],
         "gr2_as": "HUM_M_CLT_Pants_H_Short.GR2",
-        "hide_body_parts": false
+        "hide_body_parts": true
       },
       "jacket": {
         "code": "MJ",
@@ -33,8 +34,8 @@
         "visual_bank": "Public/Shared/Content/Assets/Characters/Humans/[PAK]_Male_Clothing/_merged.lsf",
         "vanilla_visual": "018e7693-3ebb-3a49-3caf-ebe16f7a2970",
         "vanilla_material_id": "f028eb0c-03a3-e6ec-b341-bb415395fcb0",
-        "vanilla_material": "HUM_F_CLT_Pants_H",
-        "bank": "extracted/mesh/HUM_F_Clothing.lsf",
+        "vanilla_material": "HUM_M_CLT_Shirt_A",
+        "bank": "extracted/mesh/HUM_M_Clothing.lsf",
         "bm": "NarutoOutfit_Jacket_BM.DDS",
         "msk": "NarutoOutfit_Jacket_MSKcloth.DDS",
         "keep_lods": [
@@ -43,7 +44,7 @@
         "body_types": [
           "7d73f501-f65e-46af-a13b-2cacf3985d05"
         ],
-        "hide_body_parts": false
+        "hide_body_parts": ["wrists", "lowerarm"]
       }
     }
   },

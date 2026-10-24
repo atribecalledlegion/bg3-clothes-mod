@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="0" lslib_meta="v1,bswap_guids,lsf_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="0da1a2ae-44b9-4eec-b7ec-e075c9ec426a" />
+					<attribute id="Name" type="LSString" value="UNI_NarutoOutfitSimple" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="Stats" type="FixedString" value="UNI_NarutoOutfitSimple" />
+					<attribute id="ParentTemplateId" type="FixedString" value="9410a467-3e49-4b14-b067-ea8ad6a0d431" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h7ecb8a19g973eg4812gb8b7g452e67eb0547" version="1" />
+					<attribute id="Description" type="TranslatedString" handle="h4d259edfg135bg4c4aga160g934fae93ce83" version="1" />
+					<attribute id="Icon" type="FixedString" value="Item_UNI_NarutoOutfitSimple" />
+					<children>
+						<node id="Equipment">
+							<children>
+								<node id="VisualSet">
+									<attribute id="BodySetVisual" type="FixedString" value="" />
+									<attribute id="ShowEquipmentVisuals" type="bool" value="False" />
+									<children>
+										<node id="MaterialOverrides">
+											<attribute id="MaterialResource" type="FixedString" value="" />
+											<children>
+												<node id="MaterialPresets">
+													<children>
+														<node id="Object">
+															<attribute id="MapKey" type="FixedString" value="02 Colour" />
+															<attribute id="GroupName" type="FixedString" value="02 Colour" />
+															<attribute id="MaterialPresetResource" type="FixedString" value="c9c8a4af-9be0-497b-a818-c06f1d7d84c9" />
+															<attribute id="ForcePresetValues" type="bool" value="True" />
+														</node>
+													</children>
+												</node>
+											</children>
+										</node>
+										<node id="RealMaterialOverrides" />
+									</children>
+								</node>
+						<node id="Visuals">
+							<children>
+								<node id="Object">
+									<attribute id="MapKey" type="guid" value="7d73f501-f65e-46af-a13b-2cacf3985d05" />
+									<children>
+										<node id="MapValue">
+											<attribute id="Object" type="FixedString" value="3b6c212f-2cb4-4f4f-9a02-4a10d413ade3" />
+										</node>
+										<node id="MapValue">
+											<attribute id="Object" type="FixedString" value="91bbd58d-b1dc-4728-b608-9125dac2643b" />
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

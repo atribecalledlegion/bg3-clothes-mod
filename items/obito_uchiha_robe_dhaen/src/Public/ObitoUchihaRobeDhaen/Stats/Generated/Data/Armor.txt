@@ -1,0 +1,11 @@
+// Obito Uchiha Robe (Dhaen) -- based on Gale's starting robe (UNI_GaleRobe).
+// "using" inherits ArmorClass / Weight / slot / proficiency from the vanilla entry,
+// so only the differences need to be stated here.
+
+new entry "UNI_ObitoUchihaRobeDhaen"
+type "Armor"
+using "UNI_GaleRobe"
+data "RootTemplate" "5d12efc5-b8e1-4ab5-8e73-03e118574955"
+data "Rarity" "Rare"
+data "ValueLevel" "5"
+data "Unique" "1"

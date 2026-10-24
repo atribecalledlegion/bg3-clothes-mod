@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="9" build="331" />
+    <region id="CharacterCreationAppearanceVisuals">
+        <node id="root">
+            <children>
+                <node id="CharacterCreationAppearanceVisual">
+                    <attribute id="BodyShape" type="uint8" value="0" />
+                    <attribute id="BodyType" type="uint8" value="0" />
+                    <attribute id="DisplayName" type="TranslatedString" handle="h28d79dfcge99fg43c9g872eg37a690a2b819" version="1" />
+                    <attribute id="RaceUUID" type="guid" value="0eb594cb-8820-4be6-a58d-8be7a1a98fba" />
+                    <attribute id="SlotName" type="FixedString" value="Hair" />
+                    <attribute id="UUID" type="guid" value="0027304e-f1ee-4807-90b8-6d2f44c786ea" />
+                    <attribute id="VisualResource" type="guid" value="9e05d8a2-7eeb-4a9b-902a-94c3d5c6d883" />
+                </node>
+                <node id="CharacterCreationAppearanceVisual">
+                    <attribute id="BodyShape" type="uint8" value="0" />
+                    <attribute id="BodyType" type="uint8" value="0" />
+                    <attribute id="DisplayName" type="TranslatedString" handle="h28d79dfcge99fg43c9g872eg37a690a2b819" version="1" />
+                    <attribute id="RaceUUID" type="guid" value="6c038dcb-7eb5-431d-84f8-cecfaf1c0c5a" />
+                    <attribute id="SlotName" type="FixedString" value="Hair" />
+                    <attribute id="UUID" type="guid" value="ab45cb97-2db1-4ab2-8f4f-d481917c4f49" />
+                    <attribute id="VisualResource" type="guid" value="9e05d8a2-7eeb-4a9b-902a-94c3d5c6d883" />
+                </node>
+                <node id="CharacterCreationAppearanceVisual">
+                    <attribute id="BodyShape" type="uint8" value="0" />
+                    <attribute id="BodyType" type="uint8" value="0" />
+                    <attribute id="DisplayName" type="TranslatedString" handle="h28d79dfcge99fg43c9g872eg37a690a2b819" version="1" />
+                    <attribute id="RaceUUID" type="guid" value="45f4ac10-3c89-4fb2-b37d-f973bb9110c0" />
+                    <attribute id="SlotName" type="FixedString" value="Hair" />
+                    <attribute id="UUID" type="guid" value="bee2a745-32a2-42b6-b4bb-ef37e8858766" />
+                    <attribute id="VisualResource" type="guid" value="9e05d8a2-7eeb-4a9b-902a-94c3d5c6d883" />
+                </node>
+                <node id="CharacterCreationAppearanceVisual">
+                    <attribute id="BodyShape" type="uint8" value="0" />
+                    <attribute id="BodyType" type="uint8" value="0" />
+                    <attribute id="DisplayName" type="TranslatedString" handle="h28d79dfcge99fg43c9g872eg37a690a2b819" version="1" />
+                    <attribute id="RaceUUID" type="guid" value="4f5d1434-5175-4fa9-b7dc-ab24fba37929" />
+                    <attribute id="SlotName" type="FixedString" value="Hair" />
+                    <attribute id="UUID" type="guid" value="1b06113d-2bba-40d7-87ca-c8af4bff18db" />
+                    <attribute id="VisualResource" type="guid" value="9e05d8a2-7eeb-4a9b-902a-94c3d5c6d883" />
+                </node>
+                <node id="CharacterCreationAppearanceVisual">
+                    <attribute id="BodyShape" type="uint8" value="0" />
+                    <attribute id="BodyType" type="uint8" value="0" />
+                    <attribute id="DisplayName" type="TranslatedString" handle="h28d79dfcge99fg43c9g872eg37a690a2b819" version="1" />
+                    <attribute id="RaceUUID" type="guid" value="b6dccbed-30f3-424b-a181-c4540cf38197" />
+                    <attribute id="SlotName" type="FixedString" value="Hair" />
+                    <attribute id="UUID" type="guid" value="6eea5a4f-aa9b-4b6a-8402-44bbe5be886f" />
+                    <attribute id="VisualResource" type="guid" value="9e05d8a2-7eeb-4a9b-902a-94c3d5c6d883" />
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

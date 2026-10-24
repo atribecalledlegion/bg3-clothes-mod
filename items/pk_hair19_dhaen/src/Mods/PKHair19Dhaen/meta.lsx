@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="9" build="331" />
+    <region id="Config">
+        <node id="root">
+            <children>
+                <node id="Dependencies" />
+                <node id="ModuleInfo">
+                    <attribute id="Author" type="LSString" value="dawil" />
+                    <attribute id="CharacterCreationLevelName" type="FixedString" value="" />
+                    <attribute id="Description" type="LSString" value="PK Hair Collection's Hair 19 for the Dhaen Extended races. Load it after PK Hair Collection." />
+                    <attribute id="Folder" type="LSString" value="PKHair19Dhaen" />
+                    <attribute id="GMTemplate" type="FixedString" value="" />
+                    <attribute id="LobbyLevelName" type="FixedString" value="" />
+                    <attribute id="MD5" type="LSString" value="" />
+                    <attribute id="MainMenuBackgroundVideo" type="FixedString" value="" />
+                    <attribute id="MenuLevelName" type="FixedString" value="" />
+                    <attribute id="Name" type="LSString" value="PK Hair 19 for Dhaen" />
+                    <attribute id="NumPlayers" type="uint8" value="4" />
+                    <attribute id="PhotoBooth" type="FixedString" value="" />
+                    <attribute id="StartupLevelName" type="FixedString" value="" />
+                    <attribute id="Tags" type="LSString" value="" />
+                    <attribute id="Type" type="FixedString" value="Add-on" />
+                    <attribute id="UUID" type="FixedString" value="2d484bbf-3064-4988-b6b8-cf31b1425651" />
+                    <attribute id="Version64" type="int64" value="36028797018963968" />
+                    <children>
+                        <node id="PublishVersion">
+                            <attribute id="Version64" type="int64" value="36028797018963968" />
+                        </node>
+                        <node id="Scripts" />
+                        <node id="TargetModes">
+                            <children>
+                                <node id="Target">
+                                    <attribute id="Object" type="FixedString" value="Story" />
+                                </node>
+                            </children>
+                        </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

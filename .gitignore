@@ -11,3 +11,18 @@ extracted/
 # conform, Larian's skeleton). Regenerate locally from the zip -- see items/naruto_outfit.
 items/naruto_outfit/src/Generated/
 items/naruto_outfit/src/Public/NarutoOutfit/Assets/Textures/
+
+# Obito scars: generated layers, previews and DDS builds (regenerate with the scripts in that folder)
+items/obito_scars/art/out/
+
+# Lloyd hair: shipped meshes derive from Larian's hair (regenerate: tools/hair_mod.py gr2 / build)
+items/lloyd_hair/src/Generated/
+items/lloyd_hair/art/out/
+
+# Hair 01 ponytail: derived from Ellians Hair (third-party); regenerate with tools/hair_mod.py
+items/hair01_ponytail/src/Generated/
+items/hair01_ponytail/art/out/
+
+# PK Hair 19 for Dhaen: refitted mesh derived from PK Hair Collection (third-party), regenerate with items/pk_hair19_dhaen/refit.py
+items/pk_hair19_dhaen/src/Generated/
+items/pk_hair19_dhaen/art/out/

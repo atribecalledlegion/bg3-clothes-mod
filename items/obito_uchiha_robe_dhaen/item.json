@@ -1,0 +1,85 @@
+{
+  "name": "Obito Uchiha Robe (Dhaen)",
+  "folder": "ObitoUchihaRobeDhaen",
+  "author": "dawil",
+  "mod_description": "The Obito Uchiha robe, refitted for the Dhaen race from Dhaen Extended (requires it). A purple robe with the Uchiha crest on its back, built on Gale's starting robe. Also fits every vanilla body type.",
+  "garment": "gale_robe",
+  "build": 9,
+  "template_parent": "168b9099-19f5-44e4-b55c-e64ceb60b71f",
+  "dependencies": [
+    {
+      "name": "Dhaen Extended",
+      "folder": "Dhaen_Extended",
+      "uuid": "a0d42bee-7687-49ea-adcc-ed9b5cb96620",
+      "version64": "72057594037927936"
+    }
+  ],
+  "mod_visuals": [
+    {
+      "label": "Dhaen Extended",
+      "pak": "extracted/dhaen/Dhaen_Extended_2.5.pak",
+      "bank": "Public/Dhaen_Extended/Content/Assets/Characters/Kid_A/[PAK]_Male_Armor/_merged.lsf",
+      "visual": "Dhaen_ARM_Robe_A_Body",
+      "mesh": "Generated/Public/Kid_A/[PAK]_Kid_A/Dhaen_ARM_Robe_A_Body.GR2",
+      "patched_gr2": "Generated/Public/ObitoUchihaRobeDhaen/Assets/Characters/Resources/ObitoDhaen_Robe_A_Body.GR2",
+      "set": "M",
+      "races": [
+        "77021703-2c3d-4e0b-8237-6633abe6a378",
+        "9ea58dd5-3194-4778-8611-95bf8c18a274"
+      ],
+      "companions": [],
+      "hide_body_parts": [
+        "Thighs",
+        "knees",
+        "shins",
+        "Private_Parts",
+        "Underwear_Panties"
+      ]
+    }
+  ],
+  "mod_materials": [
+    {
+      "tag": "pants",
+      "code": "P",
+      "vanilla_material": "CHD_Tieflings_Pants_A",
+      "vanilla_material_id": "31c0265f-17cc-5635-8679-81c474e39a97",
+      "bank": "extracted/mesh/CHD_Tiefling_Children.lsf",
+      "bm": "ObitoDhaen_Pants_BM.DDS",
+      "msk": "ObitoDhaen_Pants_MSKcloth.DDS",
+      "colour": "#473E65",
+      "size": 256
+    }
+  ],
+  "stat": "UNI_ObitoUchihaRobeDhaen",
+  "display_name": "Obito Uchiha Robe (Dhaen)",
+  "description": "The crest stitched at its back has taken no dye and lost no colour, however many hands have tried to change it.",
+  "rarity": "Rare",
+  "value_level": 5,
+  "treasure_tables": [
+    "TUT_Chest_Potions"
+  ],
+  "visual_prefix": "ObitoUchihaRobeDhaen_",
+  "neutral_maps": {
+    "nm": "#8080FF",
+    "pm": "#06D4E6"
+  },
+  "icon_view": "back",
+  "ids": {
+    "mod": "4aaaf424-a128-4b64-8125-8c45b54e6025",
+    "item": "5d12efc5-b8e1-4ab5-8e73-03e118574955",
+    "name_handle": "h1a6bd764g3223g4145ga471g72697b14a955",
+    "desc_handle": "hcb85008bg499dg401egbf1egf3a9f7f42833",
+    "preset": "a01ab30f-5010-4a75-954f-b67be24fda3e",
+    "nm": "cadd7860-577c-4617-9fb0-2773d824a8a9",
+    "pm": "e426a5fd-33a0-46d5-b2ea-d8a37f5d386c",
+    "material_M": "1a41d5c3-ac05-426d-a5b4-04870debb8e3",
+    "bm_M": "d8393a46-0d5d-408f-8c5f-0eeed6a3e2ea",
+    "msk_M": "13d130fc-f9bb-4043-8498-d227d7496c27",
+    "material_F": "cc4f8104-7a42-463e-bd40-64e30a09dffe",
+    "bm_F": "7a0fd2b0-3cdf-4b90-9b20-3683224cc000",
+    "msk_F": "0a213d8d-7425-43bd-8776-217953b7e573",
+    "material_P": "da049a03-e7cb-45a9-9637-8189677c3997",
+    "bm_P": "45dfd977-ec9c-42d6-9fc9-fc824de032ac",
+    "msk_P": "34c80cc8-fc2c-4522-b550-a0fb83ecdf52"
+  }
+}

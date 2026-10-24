@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="0" lslib_meta="v1,bswap_guids,lsf_adjacency" />
+	<region id="VisualBank">
+		<node id="VisualBank">
+			<children>
+<node id="Resource">
+					<attribute id="AttachBone" type="FixedString" value="" />
+					<attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
+					<attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
+					<attribute id="BoundsMax" type="fvec3" value="0.11817616 1.9716679 0.107471816" />
+					<attribute id="BoundsMin" type="fvec3" value="-0.11850716 1.7148328 -0.14741455" />
+					<attribute id="ClothColliderResourceID" type="FixedString" value="" />
+					<attribute id="HairPresetResourceId" type="FixedString" value="8b961bbc-9ae0-3bf5-7349-b4c62c72b6c4" />
+					<attribute id="HairType" type="uint8" value="2" />
+					<attribute id="ID" type="FixedString" value="d77036ea-d5fb-4c5b-8c0d-1f0a3498e687" />
+					<attribute id="MaterialType" type="uint8" value="0" />
+					<attribute id="Name" type="LSString" value="LLOYD_HAIR" />
+					<attribute id="NeedsSkeletonRemap" type="bool" value="False" />
+					<attribute id="RemapperSlotId" type="FixedString" value="" />
+					<attribute id="ScalpMaterialId" type="FixedString" value="" />
+					<attribute id="SkeletonResource" type="FixedString" value="" />
+					<attribute id="SkeletonSlot" type="FixedString" value="" />
+					<attribute id="Slot" type="FixedString" value="Hair" />
+					<attribute id="SoftbodyResourceID" type="FixedString" value="" />
+					<attribute id="SourceFile" type="LSString" value="Generated/Public/LloydHair/[PAK]_Hair/LloydHair.GR2" />
+					<attribute id="SupportsVertexColorMask" type="bool" value="False" />
+					<attribute id="Template" type="FixedString" value="Generated/Public/LloydHair/[PAK]_Hair/LloydHair.Dummy_Root.0" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115207403209032" />
+					<children>
+						<node id="AnimationWaterfall">
+							<attribute id="Object" type="FixedString" value="" />
+						</node>
+						<node id="Base">
+							<children>
+								<node id="Tags">
+									<attribute id="Object" type="FixedString" value="Hair" />
+								</node>
+							</children>
+						</node>
+						<node id="ClothProxyMapping" />
+						<node id="Objects">
+							<attribute id="LOD" type="uint8" value="0" />
+							<attribute id="MaterialID" type="FixedString" value="472f0af6-ffed-a169-c5bf-95835fb489c2" />
+							<attribute id="ObjectID" type="FixedString" value="LloydHair.HAIR_HUM_M_Straight_Short_M_Mesh.0" />
+						</node>
+						<node id="Objects">
+							<attribute id="LOD" type="uint8" value="1" />
+							<attribute id="MaterialID" type="FixedString" value="472f0af6-ffed-a169-c5bf-95835fb489c2" />
+							<attribute id="ObjectID" type="FixedString" value="LloydHair.HAIR_HUM_M_Straight_Short_M_Mesh_LOD1.1" />
+						</node>
+					</children>
+				</node>
+				
+			</children>
+		</node>
+	</region>
+</save>

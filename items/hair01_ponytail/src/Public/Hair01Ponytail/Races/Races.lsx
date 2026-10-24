@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="Races">
+    <node id="root">
+      <children>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="2da2addc-1d20-48fc-818b-bb25f3634164" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_Hum_0" />
+          <attribute id="UUID" type="guid" value="a724a9e6-acf6-4a00-b456-4f40ade28cd7" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="b6360627-e447-41f0-8bab-84edd1652ba2" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_BF_1" />
+          <attribute id="UUID" type="guid" value="bd6811f4-9314-4808-8ccf-da01677d1807" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="2c989144-e628-452c-87f1-f53731936c21" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_Tif_2" />
+          <attribute id="UUID" type="guid" value="68cd166d-47f4-49c3-a843-cf70b269730e" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="3c469b50-f42c-40e0-bd63-67b6076da349" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_Gty_3" />
+          <attribute id="UUID" type="guid" value="50ab3baa-bc7e-4733-b443-e96badc3fb50" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="7b4990d5-4d03-4e6c-82cb-c27eb59b1599" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_Elf_4" />
+          <attribute id="UUID" type="guid" value="b34c3e45-ccb3-452c-a58b-76c0c2125f4f" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="0352064d-a3fd-42f9-88c3-ed7d1a671acd" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_Drow_5" />
+          <attribute id="UUID" type="guid" value="54e9507d-7a87-426e-bcfc-6d0d0b25bff1" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="a446eca0-a81e-4775-bfa0-d8feefd97508" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_HalfElf_6" />
+          <attribute id="UUID" type="guid" value="1ae21a4f-f4f6-4f3b-87f1-c9ea6742f954" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="27d68cd8-59bd-44e6-a121-2a565d04c946" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_Halfling_7" />
+          <attribute id="UUID" type="guid" value="3f54c9fd-d04d-4e4c-a58d-72d53f40bb61" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="77bd2e73-2a57-4c2f-bd77-0522f3dca6c2" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_Halfling_8" />
+          <attribute id="UUID" type="guid" value="37b82332-ccfd-4f77-99ee-0391284af29d" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="7b1aacbf-a29b-4d2a-991f-9e8fa9ff95ea" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_HalfOrc_9" />
+          <attribute id="UUID" type="guid" value="828f49f1-951b-4096-84a8-af63852c5a47" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+        <node id="Race">
+          <attribute id="MergedInto" type="guid" value="26ae3917-5ae6-4216-a2d9-cabe506dbc2d" />
+          <attribute id="Name" type="FixedString" value="Hair01Ponytail_Dhaen_DragonBoyn_10" />
+          <attribute id="UUID" type="guid" value="7646896c-4fb2-49e9-8ffd-244440afde21" />
+          <children>
+            <node id="Visuals">
+              <attribute id="Object" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+            </node>
+          </children>
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

@@ -85,6 +85,18 @@ class Item:
             yield tag, s, dict(material=self.ids['material_' + c], bm=self.ids['bm_' + c],
                                msk=self.ids['msk_' + c], visual=self.ids.get('visual_' + c))
 
+    def extra_materials(self):
+        """(tag, definition, ids) for "mod_materials": materials cloned from a vanilla one
+        and painted a flat colour, for meshes another mod pairs with the garment (the
+        pants worn under a robe) that are not part of the garment's own texture sets."""
+        for s in self.cfg.get('mod_materials', []):
+            c = s['code']
+            missing = [k for k in ('material_' + c, 'bm_' + c, 'msk_' + c) if k not in self.ids]
+            if missing:
+                raise SystemExit('%s: ids missing %s' % (self.id, ', '.join(missing)))
+            yield s['tag'], s, dict(material=self.ids['material_' + c], bm=self.ids['bm_' + c],
+                                    msk=self.ids['msk_' + c], visual=None)
+
 
 def load(argv=None):
     argv = sys.argv if argv is None else argv

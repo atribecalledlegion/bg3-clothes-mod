@@ -1,0 +1,74 @@
+{
+  "name": "Naruto Outfit (Simple)",
+  "folder": "NarutoOutfitSimple",
+  "author": "dawil",
+  "mod_description": "Orange and navy jacket and shorts painted onto BG3's own human male shirt and shorts. No custom meshes, so it fits every pose.",
+  "art": [
+    "python",
+    "items/naruto_outfit_simple/art/make_textures.py",
+    "naruto_outfit_simple"
+  ],
+  "custom": {
+    "label": "retextured vanilla shirt and shorts",
+    "stat_parent": "UNI_GaleRobe",
+    "parent_template": "9410a467-3e49-4b14-b067-ea8ad6a0d431",
+    "colour_preset": "fb21807c-fb57-194d-e7c8-848b37a4fb24",
+    "sets": {
+      "pants": {
+        "code": "MP",
+        "vanilla_mesh": true,
+        "visual_bank": "Public/Shared/Content/Assets/Characters/Humans/[PAK]_Male_Clothing/_merged.lsf",
+        "vanilla_visual": "7a0fbf45-3619-b7f9-f405-2fd48bfd08cb",
+        "vanilla_material_id": "9ba4da80-7fc1-fdd1-d96d-2ff08194cd26",
+        "vanilla_material": "HUM_F_CLT_Pants_H",
+        "bank": "extracted/mesh/HUM_F_Clothing.lsf",
+        "bm": "NarutoSimple_Pants_BM.DDS",
+        "msk": "NarutoSimple_Pants_MSKcloth.DDS",
+        "body_types": [
+          "7d73f501-f65e-46af-a13b-2cacf3985d05"
+        ]
+      },
+      "jacket": {
+        "code": "MJ",
+        "vanilla_mesh": true,
+        "visual_bank": "Public/Shared/Content/Assets/Characters/Humans/[PAK]_Male_Clothing/_merged.lsf",
+        "vanilla_visual": "018e7693-3ebb-3a49-3caf-ebe16f7a2970",
+        "vanilla_material_id": "f028eb0c-03a3-e6ec-b341-bb415395fcb0",
+        "vanilla_material": "HUM_M_CLT_Shirt_A",
+        "bank": "extracted/mesh/HUM_M_Clothing.lsf",
+        "bm": "NarutoSimple_Jacket_BM.DDS",
+        "msk": "NarutoSimple_Jacket_MSKcloth.DDS",
+        "body_types": [
+          "7d73f501-f65e-46af-a13b-2cacf3985d05"
+        ]
+      }
+    }
+  },
+  "stat": "UNI_NarutoOutfitSimple",
+  "display_name": "Naruto Outfit (Simple)",
+  "description": "Orange and navy, cut to fit. The same loud ninja, in clothes that stay where they are put.",
+  "rarity": "Rare",
+  "value_level": 5,
+  "unique": false,
+  "treasure_tables": [
+    "TUT_Chest_Potions"
+  ],
+  "build": 1,
+  "ids": {
+    "mod": "20b750be-dc06-4e45-990c-3233e25c018a",
+    "item": "0da1a2ae-44b9-4eec-b7ec-e075c9ec426a",
+    "preset": "c9c8a4af-9be0-497b-a818-c06f1d7d84c9",
+    "nm": "13f176a2-cb04-4348-8032-3ed61474e2dd",
+    "pm": "54a9e945-e92d-496b-a0d4-189d757eade7",
+    "name_handle": "h7ecb8a19g973eg4812gb8b7g452e67eb0547",
+    "desc_handle": "h4d259edfg135bg4c4aga160g934fae93ce83",
+    "material_MP": "34a425b4-226a-4462-b6f0-def36ba4504b",
+    "bm_MP": "8094617f-e4bb-4ef6-bf02-66dedd1fd6dd",
+    "msk_MP": "31ca9ac1-6dc4-4ab9-918e-1c1785fd15db",
+    "visual_MP": "3b6c212f-2cb4-4f4f-9a02-4a10d413ade3",
+    "material_MJ": "d489dbe4-7b31-4f9c-a94a-1abac1d73bd4",
+    "bm_MJ": "b0034bcd-0c5b-40ca-b460-f95226146c57",
+    "msk_MJ": "2f02ba5c-8c81-4f72-8f49-3d113ca0b7b8",
+    "visual_MJ": "91bbd58d-b1dc-4728-b608-9125dac2643b"
+  }
+}

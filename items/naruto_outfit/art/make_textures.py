@@ -2,13 +2,14 @@
 
     python items/naruto_outfit/art/make_textures.py naruto_outfit
 
-The model ships one 2048 colour atlas covering the whole character, and the imported
-meshes keep their original UVs, so the atlas IS the base colour map -- no painting needed.
-The atlas is used AS-IS. It looked for a while as though the game sampled v the other way
-round, because an early build shipped a mesh whose UVs were flipped (the OBJ cut wrote v
-in the wrong convention) -- flipping the texture as well only swapped one wrong result for
-another. With the mesh right, the atlas is right: rendering the packed GR2 against the
-packed DDS reproduces exactly what the game draws, and is the way to check this offline.
+Source: extracted/naruto-rigged/ ("Naruto Rigged" by SniperAmbush, extracted from Ultimate
+Ninja Storm 4, CC-BY-4.0 -- credit required if this mod is shared). Replaces the original
+naruto-r download: that model's atlas was a fragmented, unpadded mosaic of tiny UV islands
+that bled into "checkered" garbage under BG3's real lighting no matter what we did on the
+mesh/normals side (confirmed by shipping a flat single-colour texture and seeing the same
+pattern). This source's texture is a small set of large, flat, deliberately-laid-out colour
+regions -- the kind a real shipped game needs for its own texture budget -- so there is
+nothing fragmented for filtering to bleed across.
 
 The mask is one flat slot, as for the cloak: the shader tints by mask slot, and a single
 slot with the item's all-white preset leaves the atlas rendering exactly as it looks.
@@ -17,22 +18,22 @@ import os, subprocess, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 'tools'))
 import item as itemlib
 
-ATLAS = 'extracted/naruto-r/gltf_embedded_0.jpeg'
+ATLAS = 'extracted/naruto-rigged/textures/Naruto_Uzumaki_NarutoPart2_baseColor.png'
 MASK_SLOT = '#0000FF'
 
 
 def main():
     it = itemlib.load()
     if not os.path.exists(ATLAS):
-        raise SystemExit('%s missing: extract naruto-r.zip into extracted/naruto-r/' % ATLAS)
+        raise SystemExit('%s missing' % ATLAS)
     os.makedirs(it.textures, exist_ok=True)
     for tag, s, _ in it.sets():
         bm = os.path.join(it.textures, s['bm'])
-        subprocess.run([itemlib.MAGICK, ATLAS, '-alpha', 'off',
-                        '-define', 'dds:compression=dxt1', '-define', 'dds:mipmaps=12', bm], check=True)
+        subprocess.run([itemlib.MAGICK, ATLAS, '-resize', '2048x2048', '-alpha', 'off',
+                        '-define', 'dds:compression=dxt1', '-define', 'dds:mipmaps=1', bm], check=True)
         msk = os.path.join(it.textures, s['msk'])
         subprocess.run([itemlib.MAGICK, '-size', '2048x2048', 'xc:' + MASK_SLOT, '-alpha', 'off',
-                        '-define', 'dds:compression=dxt1', '-define', 'dds:mipmaps=12', msk], check=True)
+                        '-define', 'dds:compression=dxt1', '-define', 'dds:mipmaps=1', msk], check=True)
         print('%-8s wrote %s, %s' % (tag, s['bm'], s['msk']))
 
 

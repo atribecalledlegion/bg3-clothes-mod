@@ -1,0 +1,24 @@
+// PATH MATTERS: this file must live at Stats/Generated/TreasureTable.txt, NOT in the
+// Stats/Generated/Data/ subfolder where Armor.txt goes. Vanilla splits them exactly that
+// way (Data/Armor.txt, Data/Object.txt, but Generated/TreasureTable.txt and
+// Generated/Equipment.txt). Put it under Data/ and the game ignores it silently -- the
+// mod loads, the item exists, and the chest is simply empty.
+//
+// TUT_Chest_Potions puts the item in the tutorial chest on the nautiloid.
+//
+// Traced rather than guessed: the chest placed in TUT_Avernus_C is the level instance
+// "S_Chest_Potions" (template CONT_MF_Chest_A, 813c005f-72ab-4806-ad7e-2e3135e41d27).
+// Its contents are not set on the root template or by story script -- the instance
+// carries InventoryList > InventoryItem > "TUT_Chest_Potions", so extending that table
+// is what reaches the chest.
+//
+// CanMerge 1 is essential, and is a real Larian directive (see DEN_Entrance_Trade,
+// DEN_Ethel, FOR_Spiders_SpiderQueen in GustavDev). Without it this REPLACES the vanilla
+// table and the chest's healing potions disappear.
+//
+// The subtable weighting "1,1" means one roll, guaranteed, so exactly one item appears.
+
+new treasuretable "TUT_Chest_Potions"
+CanMerge 1
+new subtable "1,1"
+object category "I_UNI_NarutoOutfitSimple",1,0,0,0,0,0,0,0

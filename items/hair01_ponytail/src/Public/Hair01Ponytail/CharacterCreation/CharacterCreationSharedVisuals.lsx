@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="CharacterCreationSharedVisuals">
+    <node id="root">
+      <children>
+        <node id="CharacterCreationSharedVisual">
+          <attribute id="DisplayName" type="TranslatedString" handle="h28d79dfcge99fg43c9g872eg37a690a2b819" version="1" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="89a45b19-c0ff-4fa3-b174-9b75f5a61b24" />
+          <attribute id="VisualResource" type="guid" value="9e05d8a2-7eeb-4a9b-902a-94c3d5c6d883" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

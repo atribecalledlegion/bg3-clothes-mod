@@ -372,12 +372,12 @@
 						</node>
 						<node id="Vector3Parameters">
 							<attribute id="BaseValue" type="fvec3" value="0.151058048 0.293216139 0.487765193" />
-							<attribute id="Enabled" type="bool" value="False" />
+							<attribute id="Enabled" type="bool" value="True" />
 							<attribute id="ExportAsPreset" type="bool" value="True" />
 							<attribute id="GroupName" type="FixedString" value="02 Colour" />
 							<attribute id="IsColor" type="bool" value="True" />
 							<attribute id="ParameterName" type="FixedString" value="Cloth_Primary" />
-							<attribute id="Value" type="fvec3" value="0.151058048 0.293216139 0.487765193" />
+							<attribute id="Value" type="fvec3" value="0.144972116 0.0619074702 0.0528416224" />
 						</node>
 						<node id="Vector3Parameters">
 							<attribute id="BaseValue" type="fvec3" value="0.170138374 0.0461488403 0.0461488403" />
@@ -413,7 +413,7 @@
 							<attribute id="GroupName" type="FixedString" value="02 Colour" />
 							<attribute id="IsColor" type="bool" value="True" />
 							<attribute id="ParameterName" type="FixedString" value="Leather_Primary" />
-							<attribute id="Value" type="fvec3" value="0.325036943 0.130352274 0.0697270781" />
+							<attribute id="Value" type="fvec3" value="0.166872263 0.0370285101 0.00837311707" />
 						</node>
 						<node id="Vector3Parameters">
 							<attribute id="BaseValue" type="fvec3" value="0.151058048 0.0342302024 0.0265486799" />
@@ -444,12 +444,12 @@
 						</node>
 						<node id="Vector3Parameters">
 							<attribute id="BaseValue" type="fvec3" value="0.7667436 0.7667436 0.7667436" />
-							<attribute id="Enabled" type="bool" value="True" />
+							<attribute id="Enabled" type="bool" value="False" />
 							<attribute id="ExportAsPreset" type="bool" value="True" />
 							<attribute id="GroupName" type="FixedString" value="02 Colour" />
 							<attribute id="IsColor" type="bool" value="True" />
 							<attribute id="ParameterName" type="FixedString" value="Metal_Primary" />
-							<attribute id="Value" type="fvec3" value="0.804559112 0.605484307 0.394083112" />
+							<attribute id="Value" type="fvec3" value="0.7667436 0.7667436 0.7667436" />
 						</node>
 						<node id="Vector3Parameters">
 							<attribute id="BaseValue" type="fvec3" value="0.768627465 0.768627465 0.768627465" />
@@ -567,6 +567,18 @@
 							<attribute id="MaterialID" type="FixedString" value="a890b905-0535-414d-81c9-594f65a1027c" />
 							<attribute id="ObjectID" type="FixedString" value="HUM_M_CLT_Pants_H_Short.HUM_M_CLT_Pants_H_Short_Mesh.0" />
 						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="Thighs" />
+						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="Underwear_Panties" />
+						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="Private_Parts" />
+						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="ModestyLeaf" />
+						</node>
 					</children>
 				</node>
 				<node id="Resource">
@@ -603,6 +615,18 @@
 							<attribute id="LOD" type="uint8" value="0" />
 							<attribute id="MaterialID" type="FixedString" value="aabd7490-ed11-47a3-9d00-d56aa64fcc41" />
 							<attribute id="ObjectID" type="FixedString" value="HUM_M_CLT_Shirt_A.HUM_M_CLT_Shirt_A_Mesh.0" />
+						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="Torso" />
+						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="upperarm" />
+						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="Shoulders" />
+						</node>
+						<node id="VertexColorMaskSlots">
+							<attribute id="Object" type="FixedString" value="Underwear_Bra" />
 						</node>
 					</children>
 				</node>

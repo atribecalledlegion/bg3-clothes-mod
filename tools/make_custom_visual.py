@@ -46,32 +46,51 @@ def main():
         if src is None:
             raise SystemExit('vanilla visual %s not found in %s' % (s['vanilla_visual'], s['visual_bank']))
 
-        gr2 = s.get('gr2_as') or os.path.basename(s['gr2'])
-        asset = '%s/%s' % (c['asset_dir'], gr2)
-        dst = '%s/%s/%s' % (it.src, c['asset_dir'], gr2)
-        os.makedirs(os.path.dirname(dst), exist_ok=True)
-        shutil.copyfile(s['gr2'], dst)
+        # "vanilla_mesh": true keeps Larian's own mesh: no GR2 is shipped, SourceFile and
+        # Template stay as the vanilla visual has them, every LOD stays, and only the
+        # material is swapped -- a retexture, like the robe items.
+        vanilla_mesh = s.get('vanilla_mesh', False)
+        if vanilla_mesh:
+            gr2 = asset = '(vanilla mesh)'
+        else:
+            gr2 = s.get('gr2_as') or os.path.basename(s['gr2'])
+            asset = '%s/%s' % (c['asset_dir'], gr2)
+            dst = '%s/%s/%s' % (it.src, c['asset_dir'], gr2)
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            shutil.copyfile(s['gr2'], dst)
 
         # Keep only the LODs our GR2 actually contains. A cloned visual that still lists
         # the vanilla LOD1..LOD4 objects points at meshes that do not exist in our file.
         keep = set(s.get('keep_lods', [0]))
-        # VertexColorMaskSlots tell the game which body parts this garment covers, so the
-        # body underneath can be hidden. The vanilla donor's list belongs to ITS shape: the
-        # long-sleeved shirt hides the arms, and an imported jacket with shorter sleeves
-        # then leaves bare arms invisible with the hands still floating. Keep the list only
-        # when the imported mesh really covers the same parts.
+        # VertexColorMaskSlots name the body regions this garment hides underneath it
+        # (e.g. Torso, upperarm, wrists, lowerarm, Shoulders for a shirt). Omitting the
+        # whole list (hide_body_parts: false) leaves the ENTIRE body always visible --
+        # including regions the mesh actually covers, which showed up as bare skin and
+        # even the character's underwear colour bleeding through the torso and glutes at
+        # runtime (confirmed: those colours do not exist anywhere in our own texture).
+        # Keeping the whole list (true) is wrong the other way when the imported mesh is
+        # SHORTER than the vanilla donor: e.g. our jacket's sleeves end mid-forearm, so
+        # inheriting "wrists"/"lowerarm" hides skin our mesh never draws over, leaving
+        # invisible forearms with the hands floating.
+        # hide_body_parts can be True (keep every slot), False (drop every slot), or a
+        # list of slot names to DROP -- keeping every other slot the donor declares. List
+        # the regions this item's mesh does NOT actually cover.
         hide = s.get('hide_body_parts', True)
+        hide_exclude = set(hide) if isinstance(hide, list) else set()
         dropped = 0
         for parent, ch in kids.items():
             keep_ch = []
             for child in ch:
                 at = lsf.node_attrs(child)
                 name = lsf.node_name(child)
-                if name == 'Objects' and int(at.get('LOD', ('', 0))[1]) not in keep:
+                if name == 'Objects' and not vanilla_mesh and int(at.get('LOD', ('', 0))[1]) not in keep:
                     dropped += 1
                     continue
-                if name == 'VertexColorMaskSlots' and not hide:
-                    continue
+                if name == 'VertexColorMaskSlots':
+                    if hide is False:
+                        continue
+                    if str(at.get('Object', ('', ''))[1]) in hide_exclude:
+                        continue
                 keep_ch.append(child)
             kids[parent] = keep_ch
         if dropped:
@@ -84,9 +103,9 @@ def main():
                 return ids['visual']
             if node == 'Resource' and key == 'Name':
                 return '%s_%s' % (it.folder, tag)
-            if node == 'Resource' and key == 'SourceFile':
+            if node == 'Resource' and key == 'SourceFile' and not vanilla_mesh:
                 return asset
-            if node == 'Resource' and key == 'Template':
+            if node == 'Resource' and key == 'Template' and not vanilla_mesh:
                 # "<same path without .GR2>.<root node>.<n>", e.g.
                 # Generated/Public/<Mod>/.../Foo.Dummy_Root.0 (matches Uchiha Weapons, a
                 # working mod with its own GR2). Leaving the vanilla path here makes the

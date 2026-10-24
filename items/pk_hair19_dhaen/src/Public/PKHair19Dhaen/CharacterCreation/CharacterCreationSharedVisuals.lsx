@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="CharacterCreationSharedVisuals">
+    <node id="root">
+      <children>
+        <node id="CharacterCreationSharedVisual">
+          <attribute id="DisplayName" type="TranslatedString" handle="h33983d45gfa38g5515gaf3eg857b035973c9" version="1" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="2d6eda42-b7e6-5ccb-ba5c-ac0db66b9d38" />
+          <attribute id="VisualResource" type="guid" value="378e426e-42fe-597b-94e8-572156091894" />
+        </node>
+        <node id="CharacterCreationSharedVisual">
+          <attribute id="DisplayName" type="TranslatedString" handle="h070048e3ga98dg5ae3g9a7dg5fc894e93920" version="1" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="f3a452c4-f747-5d53-9aee-02b6a9a2d4bd" />
+          <attribute id="VisualResource" type="guid" value="6bffd943-9753-5985-a23c-5b9b0a79b5af" />
+        </node>
+        <node id="CharacterCreationSharedVisual">
+          <attribute id="DisplayName" type="TranslatedString" handle="hebc0baa9gacbdg539dg93ccga996295036a6" version="1" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="89d4a0ca-2672-5383-985d-cb69ac3ec581" />
+          <attribute id="VisualResource" type="guid" value="3117c344-8062-5a12-b1da-1d38fc7cdac3" />
+        </node>
+        <node id="CharacterCreationSharedVisual">
+          <attribute id="DisplayName" type="TranslatedString" handle="haaaca105g85d1g5f59g913cga5fc621d7078" version="1" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="5fd786b6-50d2-545f-93fd-eec93c6e263c" />
+          <attribute id="VisualResource" type="guid" value="51054864-3b7a-548b-ae3a-1a3f88d6f804" />
+        </node>
+        <node id="CharacterCreationSharedVisual">
+          <attribute id="DisplayName" type="TranslatedString" handle="he6c3ff7ag8fa7g58dagbd9fg4e2453a641e6" version="1" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="8f80dc0a-5a70-5c39-a236-9723ca2141b8" />
+          <attribute id="VisualResource" type="guid" value="93d21f04-dd3c-5eed-9d40-b261e2d0716a" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

@@ -76,7 +76,11 @@ TAIL = '''				</node>
 
 def main():
     it = itemlib.load()
-    doc = HEAD.format(item=it.ids['item'], parent=it.base['parent_template'],
+    # "template_parent": inherit from a different template than the garment's own. The
+    # garment's template may have been overridden by another mod (Dhaen Extended replaces
+    # Gale's robe template with its own robe AND pants for its race), and a child inherits
+    # whatever the loaded parent carries -- including visuals we never listed.
+    doc = HEAD.format(item=it.ids['item'], parent=it.get('template_parent', it.base['parent_template']),
                       nameh=it.ids['name_handle'], desch=it.ids['desc_handle'],
                       stat=it.stat, icon=it.icon)
     if it.garment or it.custom:

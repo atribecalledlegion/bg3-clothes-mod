@@ -4,6 +4,7 @@
   "author": "dawil",
   "mod_description": "A purple robe with the Uchiha crest on its back, built on Gale's starting robe.",
   "garment": "gale_robe",
+  "build": 4,
 
   "stat": "UNI_ObitoUchihaRobe",
   "display_name": "Obito Uchiha Robe",

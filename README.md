@@ -6,6 +6,7 @@ pipeline. Each item is a folder under `items/`; the tools are shared.
 | Item | Look | Art step |
 |---|---|---|
 | [`obito_uchiha_robe`](items/obito_uchiha_robe) | purple robe, Uchiha crest on the back | crest composited in UV space (`art/make_textures.sh`) |
+| [`obito_uchiha_robe_dhaen`](items/obito_uchiha_robe_dhaen) | the Obito robe as its own mod, refitted for the Dhaen race (needs Dhaen Extended) | artwork copied from `obito_uchiha_robe` (`art/copy_from_obito.py`) |
 | [`akatsuki_cloak`](items/akatsuki_cloak) | black robe, red clouds front, back and sleeves | decals baked in 3D (`tools/bake_decals.py`) |
 | [`hashirama_cells`](items/hashirama_cells) | vanilla gold gem ring granting six nature spells | none: reuses the vanilla ring's look |
 | [`naruto_outfit`](items/naruto_outfit) | orange jacket and trousers, imported from a 3D model | meshes cut, fitted and rigged (`tools/cut_static_mesh.py` -> `tools/make_custom_visual.py`) |
@@ -25,6 +26,15 @@ chest. They are separate mods and can be enabled together.
 * A *custom* item (`"custom": {...}`) ships **our own meshes** (GR2) for one or more body
   types, fitted and rigged to a vanilla garment's skeleton. See
   [importing a model](#importing-a-model).
+
+**Other mods' body types.** A garment item can also wear on a race another mod adds, if that
+mod ships the vanilla garment already fitted to its skeleton. List it under `"mod_visuals"`
+(see `items/obito_uchiha_robe_dhaen/item.json`): the tool clones that mod's own visual with our
+material in place of the vanilla one, and keys it to the mod's equipment-race IDs in the
+root template. The mod's pak stays local (`extracted/`, not redistributed) and must be
+enabled in game for the race to exist; without it the extra keys match nothing. Dhaen
+Extended is done this way: Dhaen Male and Female use one refitted robe, and its Tiefling
+and Githyanki variants inherit from those two.
 
 **Spells.** List them under `"spells"`, e.g.
 `{"spell": "Target_Entangle", "use_costs": "ActionPoint:1", "cooldown": "OncePerTurn"}`.

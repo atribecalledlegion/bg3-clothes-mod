@@ -8,7 +8,7 @@
                 <node id="ModuleInfo">
                     <attribute id="Author" type="LSString" value="dawil" />
                     <attribute id="CharacterCreationLevelName" type="FixedString" value="" />
-                    <attribute id="Description" type="LSString" value="Naruto's orange jacket and trousers, imported from a 3D model and fitted to BG3's human male body." />
+                    <attribute id="Description" type="LSString" value="Naruto's orange jacket and trousers, imported from a 3D model and fitted to BG3's human male body. Based on &quot;Naruto Rigged&quot; by SniperAmbush (sketchfab.com/rithul.kamesh), CC-BY-4.0." />
                     <attribute id="Folder" type="LSString" value="NarutoOutfit" />
                     <attribute id="GMTemplate" type="FixedString" value="" />
                     <attribute id="LobbyLevelName" type="FixedString" value="" />
@@ -22,10 +22,10 @@
                     <attribute id="Tags" type="LSString" value="" />
                     <attribute id="Type" type="FixedString" value="Add-on" />
                     <attribute id="UUID" type="FixedString" value="1e48d3b7-752d-4caf-98d8-0db009fcacd5" />
-                    <attribute id="Version64" type="int64" value="36028797018963968" />
+                    <attribute id="Version64" type="int64" value="36028797018963987" />
                     <children>
                         <node id="PublishVersion">
-                            <attribute id="Version64" type="int64" value="36028797018963968" />
+                            <attribute id="Version64" type="int64" value="36028797018963987" />
                         </node>
                         <node id="Scripts" />
                         <node id="TargetModes">

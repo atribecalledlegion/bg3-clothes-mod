@@ -1,0 +1,125 @@
+{
+  "folder": "Hair01Ponytail",
+  "name": "Hair 01 with Ponytail",
+  "tile": "Hair 01 Ponytail",
+  "description": "Ellian's Hair 01 with a low ponytail at the nape. Everything else about the hair is unchanged. Requires Ellian's Hair.",
+  "author": "dawil",
+  "base": "M_Hair_01",
+  "mesh": {
+    "gr2": "art/out/Hair01Ponytail.GR2"
+  },
+  "races": {
+    "Human": "0eb594cb-8820-4be6-a58d-8be7a1a98fba",
+    "Elf": "6c038dcb-7eb5-431d-84f8-cecfaf1c0c5a",
+    "HalfElf": "45f4ac10-3c89-4fb2-b37d-f973bb9110c0",
+    "Drow": "4f5d1434-5175-4fa9-b7dc-ab24fba37929",
+    "Tiefling": "b6dccbed-30f3-424b-a181-c4540cf38197"
+  },
+  "body_types": [
+    0
+  ],
+  "body_shapes": [
+    0
+  ],
+  "ids": {
+    "mod": "b8930bd9-cfc8-466d-83bc-c5a284a52c1e",
+    "visual": "9e05d8a2-7eeb-4a9b-902a-94c3d5c6d883",
+    "name_handle": "h28d79dfcge99fg43c9g872eg37a690a2b819",
+    "rows": {
+      "Human/0/0": "0027304e-f1ee-4807-90b8-6d2f44c786ea",
+      "Human/0/1": "35eee4bf-306c-47c6-bdd7-5389c2cb3fa6",
+      "Human/1/0": "32557d09-171a-4d80-8029-5d3c8e08dede",
+      "Human/1/1": "7b73ef06-64f9-4e7d-bf85-ffb48123531c",
+      "Elf/0/0": "ab45cb97-2db1-4ab2-8f4f-d481917c4f49",
+      "Elf/0/1": "68a05ac9-b78f-48c7-a33c-5d250bb7f9f6",
+      "Elf/1/0": "6740aad4-2abb-421c-b636-8322f475c130",
+      "Elf/1/1": "fc08215b-e950-416a-9bab-c1bfaf53859d",
+      "HalfElf/0/0": "bee2a745-32a2-42b6-b4bb-ef37e8858766",
+      "HalfElf/0/1": "47db319d-d416-4dc9-9cfe-754b7bd90213",
+      "HalfElf/1/0": "7624a66b-4b9b-4cd3-a602-55272c295024",
+      "HalfElf/1/1": "4834f16f-92c8-42e2-b99e-70dec0c77931",
+      "Drow/0/0": "1b06113d-2bba-40d7-87ca-c8af4bff18db",
+      "Drow/0/1": "8be55df9-d564-4632-8325-5c4805edf260",
+      "Drow/1/0": "115852ea-42a7-49d4-a443-203a729ff2b5",
+      "Drow/1/1": "4a0115a7-e0bd-4aff-a46d-233111e8a77d",
+      "Tiefling/0/0": "6eea5a4f-aa9b-4b6a-8402-44bbe5be886f",
+      "Tiefling/0/1": "30e32c7f-0e01-4a74-86eb-d1b836d60e70",
+      "Tiefling/1/0": "80b3f781-b8bb-4c79-8246-6afd0a07298e",
+      "Tiefling/1/1": "4d0ac489-8f63-4492-aec6-85761eaef77d"
+    }
+  },
+  "source": {
+    "pak": "Ellian's Hair.pak",
+    "bank": "Public/Hiji_Hair/Content/Assets/Characters/[PAK]_Hair/Hiji_Hair.lsx",
+    "visual": "M_Hair_01"
+  },
+  "requires": [
+    {
+      "folder": "Hiji_Hair",
+      "name": "Ellian's hair",
+      "uuid": "139c922a-7657-4514-b393-0f08e992c985",
+      "version64": 36029297386049870
+    }
+  ],
+  "dhaen": {
+    "shared_visual": "89a45b19-c0ff-4fa3-b174-9b75f5a61b24",
+    "races": [
+      {
+        "name": "Dhaen_Hum",
+        "into": "2da2addc-1d20-48fc-818b-bb25f3634164",
+        "uuid": "a724a9e6-acf6-4a00-b456-4f40ade28cd7"
+      },
+      {
+        "name": "Dhaen_BF",
+        "into": "b6360627-e447-41f0-8bab-84edd1652ba2",
+        "uuid": "bd6811f4-9314-4808-8ccf-da01677d1807"
+      },
+      {
+        "name": "Dhaen_Tif",
+        "into": "2c989144-e628-452c-87f1-f53731936c21",
+        "uuid": "68cd166d-47f4-49c3-a843-cf70b269730e"
+      },
+      {
+        "name": "Dhaen_Gty",
+        "into": "3c469b50-f42c-40e0-bd63-67b6076da349",
+        "uuid": "50ab3baa-bc7e-4733-b443-e96badc3fb50"
+      },
+      {
+        "name": "Dhaen_Elf",
+        "into": "7b4990d5-4d03-4e6c-82cb-c27eb59b1599",
+        "uuid": "b34c3e45-ccb3-452c-a58b-76c0c2125f4f"
+      },
+      {
+        "name": "Dhaen_Drow",
+        "into": "0352064d-a3fd-42f9-88c3-ed7d1a671acd",
+        "uuid": "54e9507d-7a87-426e-bcfc-6d0d0b25bff1"
+      },
+      {
+        "name": "Dhaen_HalfElf",
+        "into": "a446eca0-a81e-4775-bfa0-d8feefd97508",
+        "uuid": "1ae21a4f-f4f6-4f3b-87f1-c9ea6742f954"
+      },
+      {
+        "name": "Dhaen_Halfling",
+        "into": "27d68cd8-59bd-44e6-a121-2a565d04c946",
+        "uuid": "3f54c9fd-d04d-4e4c-a58d-72d53f40bb61"
+      },
+      {
+        "name": "Dhaen_Halfling",
+        "into": "77bd2e73-2a57-4c2f-bd77-0522f3dca6c2",
+        "uuid": "37b82332-ccfd-4f77-99ee-0391284af29d"
+      },
+      {
+        "name": "Dhaen_HalfOrc",
+        "into": "7b1aacbf-a29b-4d2a-991f-9e8fa9ff95ea",
+        "uuid": "828f49f1-951b-4096-84a8-af63852c5a47"
+      },
+      {
+        "name": "Dhaen_DragonBoyn",
+        "into": "26ae3917-5ae6-4216-a2d9-cabe506dbc2d",
+        "uuid": "7646896c-4fb2-49e9-8ffd-244440afde21"
+      }
+    ]
+  },
+  "visual_name": "HAIR01_PONYTAIL"
+}
